@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="FoodOnHoop.Views.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FoodOnHoop.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Images/Login.png" />
+    </UserControl.Background>
+    <Grid>
+        <Label Height="38"  Margin="231,148,432,0" Name="textBlock1" Content="🙎🏻‍♂️  User Name"  VerticalAlignment="Top"   FontSize="16" FontWeight="DemiBold" ></Label>
+        <Label Height="42" Margin="233,196,437,0" Name="textBlock2" Content="🔑 Password" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" />
+        <!--<Border  Margin="384,144,268,0" BorderThickness="2" Background="White" Opacity="0.3" CornerRadius="25">
+            <TextBox  Margin="384,144,268,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="35" ></TextBox>
+        </Border>
+        <Border Margin="388,194,273,0" BorderThickness="2" Background="White" Opacity="0.3" CornerRadius="25">
+            <PasswordBox   Margin="388,194,273,0" Name="txtpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="35" />
+        </Border>-->
+        <TextBox BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5"  Margin="384,148,258,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="29" ></TextBox>
+        <PasswordBox  BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5" Margin="383,201,259,0" Name="txtpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="26" />
+        <Button x:Name="btnLogin" Content="Login" Height="28"  Margin="391,260,341,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Click="btnLogin_Click" ></Button>
+        <Button x:Name="btnSignUp" Content="SignUp" Height="28"  Margin="469,260,257,0"  Opacity="0.8" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Background="CadetBlue" Click="btnSignUp_Click" ></Button>
+        <Frame x:Name="Main" ></Frame>
+    </Grid>
+</UserControl>

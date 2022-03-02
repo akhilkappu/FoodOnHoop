@@ -1,0 +1,31 @@
+﻿<Application x:Class="FoodOnHoop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FoodOnHoop"
+             StartupUri="MainWindow.xaml"
+             xmlns:viewModel="clr-namespace:FoodOnHoop.ViewModels"
+             xmlns:view="clr-namespace:FoodOnHoop.Views">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewModel:AboutUsViewModel}">
+            <view:AboutUs></view:AboutUs>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:AllTimeChillersViewModel}">
+            <view:AllTimeChillers></view:AllTimeChillers>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:FoodOnMoodViewModel}">
+            <view:FoodOnMood></view:FoodOnMood>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <view:Home></view:Home>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:HotClassicViewModel}">
+            <view:HotClassic></view:HotClassic>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:Login></view:Login>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ContactUsViewModel}">
+            <view:ContactUs></view:ContactUs>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
