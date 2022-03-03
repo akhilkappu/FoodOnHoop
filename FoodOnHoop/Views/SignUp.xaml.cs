@@ -24,6 +24,7 @@ namespace FoodOnHoop.Views
         {
             InitializeComponent();
             //Svd new change Git 12.42
+            //12.47 secnd
         }
     }
 }
