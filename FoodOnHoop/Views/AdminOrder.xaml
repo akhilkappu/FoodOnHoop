@@ -22,7 +22,7 @@
                         <DataGridTextColumn Header="Employee Name" IsReadOnly="True" ></DataGridTextColumn>
                         <DataGridTextColumn Header="Date" IsReadOnly="True" ></DataGridTextColumn>
                         <DataGridTextColumn Header="Item Quantity" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Total Price" IsReadOnly="True" ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Total ItemPrice" IsReadOnly="True" ></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </ListView>
