@@ -8,5 +8,6 @@ namespace FoodOnHoop.ViewModels
 {
     public class HotClassicViewModel : BaseViewModel
     {
+        //changed by athulya
     }
 }
