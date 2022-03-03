@@ -72,7 +72,8 @@
                 <TextBox x:Name="txtEditItemName" HorizontalAlignment="Left" Margin="139,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
 
             </Grid>
+            <Button x:Name="btnLogout" Content="👈 Logout" Foreground="White" Background="Transparent" FontWeight="Bold" HorizontalAlignment="Left" Margin="722,25,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <!--<Frame x:Name="Employee"/>-->
+        <!--<Frame x:Name="Login"/>-->
     </Grid>
 </Page>
