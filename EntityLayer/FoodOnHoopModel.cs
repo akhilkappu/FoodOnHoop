@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    internal class FoodOnHoopModel
+    public class FoodOnHoopModel
     {
+
     }
 }
