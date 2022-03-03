@@ -54,8 +54,8 @@
             <TextBox x:Name="txtEditContactNo" HorizontalAlignment="Left" Margin="139,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
             <TextBox x:Name="txtEditItemName" HorizontalAlignment="Left" Margin="139,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
             <TextBox x:Name="txtEditName" HorizontalAlignment="Left" Margin="139,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-
-            <!--<Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="154,165,0,5" Width="83" Click="btnEdit_Click" FontSize="18" FontWeight="Bold" />-->
+            <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="154,165,0,5" Width="80" Height="30"  FontSize="16" FontWeight="Bold" />
+            
         </Grid>
         <Button Background="#FF29242A" Content="👈" Foreground="White" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="24" Click="Button_Click"/>
         <Frame x:Name="Back"/>
