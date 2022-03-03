@@ -15,15 +15,15 @@
         <ListView Name="UserGrid" Margin="100,50,376,4" Background="Transparent" >
             <DataGrid Name="grdMenu" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" Width="319" Height="442" RenderTransformOrigin="0.594,0.498" Background="Transparent">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ProductId}" IsReadOnly="True">
+                    <DataGridTextColumn Header="ID"  IsReadOnly="True">
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Name" Binding="{Binding ProductName}" Width="80" IsReadOnly="True">
+                    <DataGridTextColumn Header="Name"  Width="80" IsReadOnly="True">
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Contact No" Binding="{Binding ProductPrice}" IsReadOnly="True">
+                    <DataGridTextColumn Header="Contact No"  IsReadOnly="True">
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Email ID" Binding="{Binding ProductPrice}" IsReadOnly="True">
+                    <DataGridTextColumn Header="Email ID" IsReadOnly="True">
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Join Date" Binding="{Binding ProductPrice}" IsReadOnly="True">
+                    <DataGridTextColumn Header="Join Date"  IsReadOnly="True">
                     </DataGridTextColumn>
                     <DataGridTemplateColumn Header="Edit ">
                         <DataGridTemplateColumn.CellTemplate>
