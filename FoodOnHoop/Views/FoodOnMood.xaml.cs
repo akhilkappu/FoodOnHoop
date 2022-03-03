@@ -23,6 +23,8 @@ namespace FoodOnHoop.Views
         public FoodOnMood()
         {
             InitializeComponent();
+            // pull and push 
+            
         }
     }
 }
