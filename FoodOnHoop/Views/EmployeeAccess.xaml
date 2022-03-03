@@ -19,8 +19,8 @@
             <TextBox x:Name="txtCustomerPhone" HorizontalAlignment="Left" Margin="200,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
         </Grid>
         <Grid>
-            <ListView Name="UserGrid" Margin="40,150,376,4" Background="Transparent" >
-                <DataGrid Name="grdMenu" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" Width="360" Height="390" RenderTransformOrigin="0.594,0.498" Background="Transparent">
+            <ListView x:Name="lstUserGrid" Margin="40,150,376,4" Background="Transparent" >
+                <DataGrid x:Name="grdMenu" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" Width="370" Height="290" Background="Transparent">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="OrderID" IsReadOnly="True">
                         </DataGridTextColumn>
@@ -57,20 +57,22 @@
                 <Label Content="Employee ID" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
                 <Label Content="Price" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
                 <Label Content="Date" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-                <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="145,269,0,0" Width="100" FontSize="18" Height="90" FontWeight="Bold" />
-                <ComboBox x:Name="txtAddID" HorizontalAlignment="Left" Margin="139,58,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+                <ComboBox x:Name="cbCategoryName" HorizontalAlignment="Left" Margin="139,58,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
                 <TextBox x:Name="txtAddItemName" HorizontalAlignment="Left" Margin="139,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-                <TextBox x:Name="txtAddPrice" HorizontalAlignment="Left" Margin="139,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
-                <TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-                <TextBox x:Name="txtEditPrice" HorizontalAlignment="Left" Margin="139,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
-                <TextBox x:Name="txtEditdate" HorizontalAlignment="Left" Margin="139,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+                <TextBox x:Name="txtAddQuantity" HorizontalAlignment="Left" Margin="139,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+                <TextBox x:Name="txtAddEmployeeID" HorizontalAlignment="Left" Margin="139,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
+                <TextBox x:Name="txtAddPrice" HorizontalAlignment="Left" Margin="139,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
+                <DatePicker x:Name="dpEditdate" HorizontalAlignment="Left" Margin="139,208,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+                <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="224,245,0,105" Width="80" FontSize="18" Height="40" FontWeight="Bold" />
+                <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="103,245,0,105" Width="80" FontSize="18" Height="40" FontWeight="Bold" />
+                <Label Content="Grand Total" Margin="10,332,178,18" FontSize="20" Foreground="White" FontWeight="Bold"/>
+                <TextBox x:Name="txtGrandTotal" Margin="129,332,11,18" Width="150" Height="30"/>
                 <!--<TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
                 <!--<TextBox x:Name="txtEditPrice" HorizontalAlignment="Left" Margin="139,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
                 <TextBox x:Name="txtEditItemName" HorizontalAlignment="Left" Margin="139,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
 
             </Grid>
         </Grid>
-        <StackPanel/>
         <!--<Frame x:Name="Employee"/>-->
     </Grid>
 </Page>
