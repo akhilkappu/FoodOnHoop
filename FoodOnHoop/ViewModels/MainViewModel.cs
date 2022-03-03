@@ -24,7 +24,7 @@ namespace FoodOnHoop.ViewModels
 
         public MainViewModel()
         {
-            RedirectCommand  = new RedirectViewCommand(this);
+            RedirectCommand = new RedirectViewCommand(this);
             
         }
     }
