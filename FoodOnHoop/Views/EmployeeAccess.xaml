@@ -53,11 +53,11 @@
         <Grid Margin="415,25,10,2"  Background="Transparent">
             <Label Content="Billing" HorizontalAlignment="Left" Margin="157,4,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
             <Label Content="Category Name" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Item Name" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Quantity" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Employee ID" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Price" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Date" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Foreground="White" Width="100" FontWeight="Bold" Height="27"/>
+            <Label Content="Item Name" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="Quantity" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="Employee ID" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="Price" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="Date" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Foreground="White" Width="100" FontWeight="Bold" Height="27"/>
             <ComboBox x:Name="cbCategoryName" HorizontalAlignment="Left" Margin="139,39,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
             <TextBox x:Name="txtAddItemName" HorizontalAlignment="Left" Margin="139,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
             <TextBox x:Name="txtAddQuantity" HorizontalAlignment="Left" Margin="139,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
@@ -76,7 +76,7 @@
         <!--<Grid Margin="438,311,25,4">-->
 
         <!--</Grid>-->
-        <Button x:Name="btnLogout" Content="👈 Logout" Foreground="White" Background="Transparent" FontWeight="Bold" HorizontalAlignment="Left" Margin="711,25,0,0" VerticalAlignment="Top"/>
+        <!--<Button x:Name="btnLogout" Content="👈 Logout" Foreground="White" Background="Transparent" FontWeight="Bold" HorizontalAlignment="Left" Margin="711,25,0,0" VerticalAlignment="Top"/>-->
     </Grid>
     <!--<Frame x:Name="Login"/>-->
 </Page>
