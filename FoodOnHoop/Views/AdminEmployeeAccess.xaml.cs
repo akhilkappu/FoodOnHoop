@@ -38,6 +38,7 @@ namespace FoodOnHoop.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Back.Content = new AdminAccess();
+            Back.Content = new AdminAccess();
         }
 
         private void btnDeleteInGrid(object sender, RoutedEventArgs e)

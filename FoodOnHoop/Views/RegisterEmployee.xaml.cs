@@ -24,5 +24,10 @@ namespace FoodOnHoop.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Back.Content = new Login();
+        }
     }
 }
