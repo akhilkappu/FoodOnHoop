@@ -115,7 +115,11 @@ namespace FoodOnHoop.Views
         {
             id = (grdMenu.SelectedItem as Category).MenuID;
             txtAddItemName.Text = (grdMenu.SelectedItem as Category).ItemName.ToString();
-            txtAddPrice.Text = (grdMenu.SelectedItem as Category).
+            txtAddPrice.Text = (grdMenu.SelectedItem as Category).Price.ToString();
+            txtCategoryID.Text = (grdMenu.SelectedItem as Category).CategoryID.ToString();
+            txtAddID.Text = (grdMenu.SelectedItem as Category).MenuID.ToString();
+
+
         }
 
        
