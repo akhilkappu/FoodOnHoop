@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
       
 
-        public void SignUpB(FoodOnHoopModel ifoodOn)
+        public void SaveSignUpB(FoodOnHoopModel ifoodOn)
         {
               SignUpData signUpData = new SignUpData();
               signUpData.SaveSignUpEmployee(ifoodOn);

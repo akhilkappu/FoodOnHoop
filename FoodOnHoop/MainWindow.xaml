@@ -16,7 +16,11 @@
                 <MenuItem Header="Hot Classics" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="HotClassic"/>
                 <MenuItem Header="All Time Chillers" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="AllTimeChillers"/>
             </MenuItem>
-            <MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>
+            <MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80">
+                <MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectViewCommands}" CommandParameter="Login"></MenuItem>
+                <MenuItem Header="SignUp" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectViewCommands}" CommandParameter="SignUp"></MenuItem>
+            </MenuItem>
+            <!--<MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>-->
             <MenuItem Header="About Us" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="AboutUs"></MenuItem>
             <MenuItem Header="Contact Us" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="ContactUs"></MenuItem>
             

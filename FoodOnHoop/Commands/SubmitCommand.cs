@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace FoodOnHoop.Commands
 {
-    internal class SubmitCommand : ICommand
+    public class SubmitCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
         public SignUpViewModel signUpViewModel { get; set; }
@@ -25,27 +25,34 @@ namespace FoodOnHoop.Commands
 
         public void Execute(object parameter)
         {
-            FoodOnHoopModel foodOnHoopModel = new FoodOnHoopModel();
-            foodOnHoopModel.EmployeeID = signUpViewModel.EmployeeID;
-            foodOnHoopModel.EmployeeFullName = signUpViewModel.EmployeeFullName;
-            foodOnHoopModel.Dob = signUpViewModel.Dob;
-            foodOnHoopModel.Age = signUpViewModel.Age;
-            foodOnHoopModel.AdhaarNumber = signUpViewModel.AdhaarNumber;   
-            foodOnHoopModel.FatherName = signUpViewModel.FatherName;   
-            foodOnHoopModel.MotherName = signUpViewModel.MotherName;
-            foodOnHoopModel.Address = signUpViewModel.Address;
-            foodOnHoopModel.District = signUpViewModel.District;
-            foodOnHoopModel.Pincode = signUpViewModel.Pincode;
-            foodOnHoopModel.State = signUpViewModel.State;
-            foodOnHoopModel.ContactNumber = signUpViewModel.ContactNumber;
-            foodOnHoopModel.EmailID = signUpViewModel.EmailID; 
-            foodOnHoopModel.JoinDate = signUpViewModel.JoinDate;
-            foodOnHoopModel.OtherSubmittedProof = signUpViewModel.OtherSubmittedProof;
-            foodOnHoopModel.UserName = signUpViewModel.UserName;
-            foodOnHoopModel.Password = signUpViewModel.Password;
-            foodOnHoopModel.ContactNumber = signUpViewModel.ContactNumber;
-            SignUpBusiness signUpBusiness = new SignUpBusiness();
-            signUpBusiness.SignUpB(foodOnHoopModel);
+            try
+            {
+                SignUpBusiness signUpBusiness = new SignUpBusiness();
+                FoodOnHoopModel foodOnHoopModel = new FoodOnHoopModel();
+                foodOnHoopModel.EmployeeID = signUpViewModel.EmployeeID;
+                foodOnHoopModel.EmployeeFullName = signUpViewModel.EmployeeFullName;
+                foodOnHoopModel.Dob = signUpViewModel.Dob;
+                foodOnHoopModel.Age = signUpViewModel.Age;
+                foodOnHoopModel.AdhaarNumber = signUpViewModel.AdhaarNumber;
+                foodOnHoopModel.FatherName = signUpViewModel.FatherName;
+                foodOnHoopModel.MotherName = signUpViewModel.MotherName;
+                foodOnHoopModel.Address = signUpViewModel.Address;
+                foodOnHoopModel.Pincode = signUpViewModel.Pincode;
+                foodOnHoopModel.State = signUpViewModel.State;
+                foodOnHoopModel.District = signUpViewModel.District;
+                foodOnHoopModel.ContactNumber = signUpViewModel.ContactNumber;
+                foodOnHoopModel.EmailID = signUpViewModel.EmailID;
+                foodOnHoopModel.JoinDate = signUpViewModel.JoinDate;
+                foodOnHoopModel.OtherSubmittedProof = signUpViewModel.OtherSubmittedProof;
+                foodOnHoopModel.UserName = signUpViewModel.UserName;
+                foodOnHoopModel.Password = signUpViewModel.Password;
+                signUpBusiness.SaveSignUpB(foodOnHoopModel);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

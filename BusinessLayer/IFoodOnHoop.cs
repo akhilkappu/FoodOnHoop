@@ -9,9 +9,8 @@ namespace BusinessLayer
 {
   public interface IFoodOnHoop
     {
-        void SignUpB(FoodOnHoopModel ifoodOn);
+        void SaveSignUpB(FoodOnHoopModel ifoodOn);
         void SaveDataBl(Category category);
-
 
     }
 }
