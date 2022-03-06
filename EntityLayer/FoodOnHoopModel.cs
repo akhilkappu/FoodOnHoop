@@ -36,9 +36,9 @@ namespace EntityLayer
             get { return _age; }
             set { _age = value; }
         }
-        private int _adhaarNumber;
+        private long _adhaarNumber;
 
-        public int AdhaarNumber
+        public long AdhaarNumber
         {
             get { return _adhaarNumber; }
             set { _adhaarNumber = value; }
@@ -86,9 +86,9 @@ namespace EntityLayer
             get { return _state; }
             set { _state = value; }
         }
-        private int _contactNumber;
+        private long _contactNumber;
 
-        public int ContactNumber
+        public long ContactNumber
         {
             get { return _contactNumber; }
             set { _contactNumber = value; }
@@ -128,12 +128,12 @@ namespace EntityLayer
             get { return _password; }
             set { _password = value; }
         }
-        private int _confirmPassword;
+        //private int _confirmPassword;
 
-        public int ConfirmPassword
-        {
-            get { return _confirmPassword; }
-            set { _confirmPassword = value; }
-        }
+        //public int ConfirmPassword
+        //{
+        //    get { return _confirmPassword; }
+        //    set { _confirmPassword = value; }
+        //}
     }
 }
