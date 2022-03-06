@@ -42,7 +42,7 @@ namespace FoodOnHoop.ViewModels
                 OnPropertyChanged("EmployeeFullName");
             }
         }
-        private DateTime _dob;
+        private DateTime _dob = DateTime.Now;
 
         public DateTime Dob
         {
@@ -165,7 +165,7 @@ namespace FoodOnHoop.ViewModels
                 OnPropertyChanged("EmailID");
             }
         }
-        private DateTime _joinDate;
+        private DateTime _joinDate = DateTime.Now;
 
         public DateTime JoinDate
         {
@@ -209,17 +209,17 @@ namespace FoodOnHoop.ViewModels
                 OnPropertyChanged("Password");
             }
         }
-        private int _confirmPassword;
+        //private int _confirmPassword;
 
-        public int ConfirmPassword
-        {
-            get { return _confirmPassword; }
-            set
-            { 
-                _confirmPassword = value;
-                OnPropertyChanged("ConfirmPassword");
-            }
-        }
+        //public int ConfirmPassword
+        //{
+        //    get { return _confirmPassword; }
+        //    set
+        //    { 
+        //        _confirmPassword = value;
+        //        OnPropertyChanged("ConfirmPassword");
+        //    }
+        //}
 
 
     }

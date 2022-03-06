@@ -38,5 +38,10 @@ namespace FoodOnHoop.Views
         {
             Admin.Content = new AdminOrder();
         }
+        private void btnadminlogout_Click(object sender, RoutedEventArgs e)
+        {
+            Admin.Content = new Home();
+        }
+
     }
 }

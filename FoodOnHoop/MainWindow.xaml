@@ -11,17 +11,17 @@
         <ContentControl Content="{Binding SelectedViewModel}"></ContentControl>
         <Menu Name="MenuSample"  VerticalAlignment="Top" Height="435" Foreground="white" Background="{x:Null}">
             <MenuItem Header="Home" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Home"></MenuItem>
-            <MenuItem Header="Menu" FontWeight="Bold" Height="30" Width="80" Background="{x:Null}" >
+            <MenuItem Header="Menu" FontWeight="Bold" Height="30" Width="70" Background="{x:Null}" >
                 <MenuItem Header="Food On Mood" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="FoodOnMood"/>
                 <MenuItem Header="Hot Classics" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="HotClassic"/>
                 <MenuItem Header="All Time Chillers" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="AllTimeChillers"/>
             </MenuItem>
-            <!--<MenuItem Header="Login/SignUp" FontWeight="Bold" Height="30" Width="80">
-                <MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectViewCommands}" CommandParameter="Login"></MenuItem>
-                <MenuItem Header="SignUp" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectViewCommands}" CommandParameter="SignUp"></MenuItem>
-            </MenuItem>-->
+            <MenuItem Header="Login/SignUp" FontWeight="Bold" Height="30" Width="100" Background="{x:Null}">
+                <MenuItem Header="Login" Background="{x:Null}"  Foreground="Black" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>
+                <MenuItem Header="SignUp" Background="{x:Null}"  Foreground="Black" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="SignUp"></MenuItem>
+            </MenuItem>
             
-            <MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>
+            <!--<MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>-->
             <MenuItem Header="About Us" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="AboutUs"></MenuItem>
             <MenuItem Header="Contact Us" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="ContactUs"></MenuItem>
             

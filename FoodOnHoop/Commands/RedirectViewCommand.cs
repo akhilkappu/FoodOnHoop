@@ -1,4 +1,5 @@
-﻿using FoodOnHoop.ViewModels;
+﻿using EntityLayer;
+using FoodOnHoop.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,9 +43,14 @@ namespace FoodOnHoop.Commands
             {
                 mainView.SelectedViewModel = new AllTimeChillersViewModel();
             }
-            else if(parameter.ToString() =="Login")
+            else if(parameter.ToString() == "Login")
             {
                 mainView.SelectedViewModel= new LoginViewModel();
+            }
+            else if (parameter.ToString() == "SignUp")
+            {
+                FoodOnHoopModel fhM = new FoodOnHoopModel();
+                mainView.SelectedViewModel = new SignUpViewModel(fhM);
             }
             else if (parameter.ToString()=="AboutUs")
             {

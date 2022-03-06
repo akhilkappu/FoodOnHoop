@@ -69,6 +69,7 @@
     <Compile Include="Commands\SubmitCommand.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\AdminMenuPageViewModel.cs" />
+    <Compile Include="ViewModels\AdminOrderViewModel.cs" />
     <Compile Include="ViewModels\AllTimeChillersViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
