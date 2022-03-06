@@ -27,5 +27,8 @@
         <DataTemplate DataType="{x:Type viewModel:ContactUsViewModel}">
             <view:ContactUs></view:ContactUs>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SignUpViewModel}">
+            <view:RegisterEmployee/>
+        </DataTemplate>
     </Application.Resources>
 </Application>
