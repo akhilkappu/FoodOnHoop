@@ -48,8 +48,8 @@
                 <Label Content="Price" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
                 <Label Content="CategoryID" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold" RenderTransformOrigin="0.539,2.405"/>
 
-                <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="153,199,0,107" Width="54"  FontSize="18" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Click="btnAdd_Click_1" />
-                <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="230,199,0,107" Width="55"  FontSize="18" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Click="btnEdit_Click"/>
+                <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Center" Margin="0,199,0,107" Width="54"  FontSize="10" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Click="btnAdd_Click_1" />
+                <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="230,199,0,107" Width="55"  FontSize="10" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Click="btnEdit_Click"/>
                 <TextBox x:Name="txtAddID" HorizontalAlignment="Left" Margin="139,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" Text="{Binding ElementName=UserGrid,Path=SelectedItem.MenuID}"  />
                 <TextBox x:Name="txtAddItemName" HorizontalAlignment="Left" Margin="139,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" Text="{Binding ElementName=UserGrid,Path=SelectedItem.ItemName}"  />
                 <TextBox x:Name="txtAddPrice" HorizontalAlignment="Left" Margin="139,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14" Text="{Binding ElementName=UserGrid,Path=SelectedItem.Price}"  />
