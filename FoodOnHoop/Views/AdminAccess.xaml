@@ -18,13 +18,14 @@
         <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="151" Margin="48,275,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Opacity="0.5"/>
         <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="151" Margin="415,94,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Opacity="0.5"/>
         <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="151" Margin="415,275,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Opacity="0.5"/>
-        <Button x:Name="btnAdminMenuPage" Content="☕" HorizontalAlignment="Left" Margin="258,122,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="70" FontSize="28" Click="btnAdminMenuPage_Click" />
-        <Button x:Name="btnAdminEmployeePage" Content="👨🏻‍🍳" HorizontalAlignment="Left" Margin="659,130,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="70" FontSize="28" Click="btnAdminEmployeePage_Click"/>
-        <Button x:Name="btnAdminOrderPage" Content="🗒️" HorizontalAlignment="Left" Margin="281,286,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="70" FontSize="28" Click="btnAdminOrderPage_Click"/>
-        <Label Content="MENU" HorizontalAlignment="Left" Margin="158,128,0,0" VerticalAlignment="Top" Width="100" Foreground="White" Height="68" FontSize="36" FontFamily="Algerian"/>
-        <Label Content="EMPLOYEE" HorizontalAlignment="Left" Margin="438,136,0,0" VerticalAlignment="Top" Width="197" Foreground="White" Height="68" FontSize="36" FontFamily="Algerian"/>
-        <Label Content="ORDER" HorizontalAlignment="Left" Margin="158,292,0,0" VerticalAlignment="Top" Width="118" Foreground="White" Height="68" FontSize="36" FontFamily="Algerian"/>
-        <Frame x:Name="Admin"/>
+        <Button x:Name="btnAdminMenuPage" Content="☕" HorizontalAlignment="Left" Margin="258,134,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="69" FontSize="28" Click="btnAdminMenuPage_Click" />
+        <Button x:Name="btnAdminEmployeePage" Content="👨🏻‍🍳" HorizontalAlignment="Left" Margin="659,141,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="59" FontSize="28" Click="btnAdminEmployeePage_Click"/>
+        <Button x:Name="btnAdminOrderPage" Content="🗒️" HorizontalAlignment="Left" Margin="281,308,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="70" Height="62" FontSize="28" Click="btnAdminOrderPage_Click"/>
+        <Label Content="MENU" HorizontalAlignment="Left" Margin="158,142,0,0" VerticalAlignment="Top" Width="100" Foreground="White" Height="54" FontSize="30" FontFamily="arial"/>
+        <Label Content="EMPLOYEE" HorizontalAlignment="Left" Margin="475,148,0,0" VerticalAlignment="Top" Width="175" Foreground="White" Height="56" FontSize="30" FontFamily="arial"/>
+        <Label Content="ORDER" HorizontalAlignment="Left" Margin="158,314,0,0" VerticalAlignment="Top" Width="118" Foreground="White" Height="46" FontSize="30" FontFamily="arial"/>
+        <Button x:Name="btnadminlogout" Content="Logout" Background="Transparent" HorizontalAlignment="Left" Foreground="White" Height="40" Margin="673,15,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="16" Click="btnadminlogout_Click"/>
+        <Frame x:Name="Admin" Margin="0,2,0,-2" />
     </Grid>
 
 </Page>
