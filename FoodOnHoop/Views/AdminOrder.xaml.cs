@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodOnHoop.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace FoodOnHoop.Views
         public AdminOrder()
         {
             InitializeComponent();
+            AdminOrderViewModel adminOrderViewModel1 = new AdminOrderViewModel();
+            grdAdminOrder.ItemsSource = adminOrderViewModel1.values;
+            this.DataContext = adminOrderViewModel1;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

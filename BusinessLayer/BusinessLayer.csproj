@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminEmployeeBusiness.cs" />
+    <Compile Include="AdminOrderBusiness.cs" />
     <Compile Include="IFoodOnHoop.cs" />
     <Compile Include="MenuCategoryBusiness.cs" />
     <Compile Include="SignUpBusiness.cs" />
