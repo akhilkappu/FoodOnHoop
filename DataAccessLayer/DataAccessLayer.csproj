@@ -53,59 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FOHModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FOHModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FOHModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FOHModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FOHModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MenuCategoryItem.cs" />
     <Compile Include="MenuSaveData.cs" />
     <Compile Include="SignUpData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblAdminAccess.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblCategory.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblCustomer.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblEmployee.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblLoginData.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblMenu.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblOrder.cs">
-      <DependentUpon>FOHModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="FOHModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FOHModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="FOHModel.edmx.diagram">
-      <DependentUpon>FOHModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,18 +67,6 @@
       <Project>{72dbd0a0-eac2-45fc-b470-f33b67895188}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FOHModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FOHModel.edmx</DependentUpon>
-      <LastGenOutput>FOHModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="FOHModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FOHModel.edmx</DependentUpon>
-      <LastGenOutput>FOHModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
