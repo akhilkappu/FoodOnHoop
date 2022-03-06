@@ -51,7 +51,7 @@
                         </DataGridTextColumn>
                         <DataGridTextColumn Header="Password" Binding="{Binding Password}" IsReadOnly="True">
                         </DataGridTextColumn>
-
+                        
                         <DataGridTemplateColumn Header="Edit">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
