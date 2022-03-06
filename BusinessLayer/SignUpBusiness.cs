@@ -28,7 +28,7 @@ namespace BusinessLayer
             menuSaveData.DeleteData(category);
         }
         public void UpdateDataBl( Category category)
-        {
+    {
             MenuSaveData menuSaveData = new MenuSaveData();
             menuSaveData.UpdateData(category);
         }

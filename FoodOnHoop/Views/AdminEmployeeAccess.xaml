@@ -45,19 +45,21 @@
         <Grid HorizontalAlignment="Left" Height="293" Margin="449,71,0,0" VerticalAlignment="Top" Width="341">
             <Label Content="Edit" HorizontalAlignment="Left" Margin="157,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
             <Label Content="Employee ID" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Employee Name" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="Contact No" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
-            <Label Content="EmailID"  HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
-            <Label Content="Join Date" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
+            <Label Content="Employee Name" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="Contact No" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
+            <Label Content="EmailID"  HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
+            <Label Content="Other  Proof" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
             <TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtEditEmployeeName" HorizontalAlignment="Left" Margin="139,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
-            <TextBox x:Name="txtEditContactNo" HorizontalAlignment="Left" Margin="139,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtEditItemName" HorizontalAlignment="Left" Margin="139,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtEditName" HorizontalAlignment="Left" Margin="139,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <TextBox x:Name="txtEditEmployeeName" HorizontalAlignment="Left" Margin="139,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
+            <TextBox x:Name="txtEditContactNo" HorizontalAlignment="Left" Margin="139,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <TextBox x:Name="txtEditEmailId" HorizontalAlignment="Left" Margin="139,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="139,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="154,165,0,5" Width="80" Height="30"  FontSize="16" FontWeight="Bold" />
+            <TextBox x:Name="txtOthersubmittedproof" HorizontalAlignment="Left" Margin="139,192,0,0"  VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <Label Content="Join Date" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
 
-            <!--<Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="154,165,0,5" Width="83" Click="btnEdit_Click" FontSize="18" FontWeight="Bold" />-->
         </Grid>
-        <Button Background="#FF29242A" Content="👈" Foreground="White" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="24" Click="Button_Click"/>
-        <Frame x:Name="Back"/>
+        <Button Background="#FF29242A" Content="👈" Foreground="White" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="24" Click="Button_Click" RenderTransformOrigin="-0.018,-0.754"/>
+        <Frame x:Name="Back"   />
     </Grid>
 </Page>

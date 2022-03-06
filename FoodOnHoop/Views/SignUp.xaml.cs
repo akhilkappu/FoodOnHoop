@@ -23,6 +23,8 @@ namespace FoodOnHoop.Views
         public SignUp()
         {
             InitializeComponent();
+            //Svd new change Git 12.42
+            //12.47 secnd
         }
 
         private void btnSumbit_Click(object sender, RoutedEventArgs e)
