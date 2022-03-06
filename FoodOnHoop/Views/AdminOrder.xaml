@@ -16,13 +16,13 @@
             <ListView Name="UserGrid" Background="Transparent" >
                 <DataGrid Name="grdReservationList" AutoGenerateColumns="False" Width="396" Height="345" Background="Transparent">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Order ID" Width="55" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Customer Name" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Item Name" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Employee Name" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Date" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Item Quantity" IsReadOnly="True" ></DataGridTextColumn>
-                        <DataGridTextColumn Header="Total Price" IsReadOnly="True" ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Order ID" Width="55"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Customer Name"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Item Name"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Employee Name"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Date" ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Item Quantity"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Total Price"  ></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </ListView>

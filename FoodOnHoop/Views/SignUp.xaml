@@ -53,24 +53,24 @@
         <Label Content="User Name" Grid.Row="6" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>
         <Label Content="Password" Grid.Row="7" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>
         <Label Content="Confirm Password" Grid.Row="8" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>
-        <TextBox x:Name="txtID" Grid.Row="1" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtFullName" Grid.Row="2" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <DatePicker x:Name="dpDob" Grid.Row="3" Grid.Column="1" Height="20" Width="120"></DatePicker>
-        <TextBox x:Name="txtAge" Grid.Row="4" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtAdhaarNumber" Grid.Row="5" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtFatherNamer" Grid.Row="6" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtMotherName" Grid.Row="7" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtAddress" Grid.Row="8" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtDistrict" Grid.Row="9" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtPincode" Grid.Row="10" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtState" Grid.Row="1" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtContactNumber" Grid.Row="2" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtEmailId" Grid.Row="3" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <DatePicker x:Name="dpJoinDate" Grid.Row="4" Grid.Column="3" Height="20" Width="120"></DatePicker>
-        <TextBox x:Name="txtOsp" Grid.Row="5" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <TextBox x:Name="txtUserName" Grid.Row="6" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <PasswordBox x:Name="txtPassword" Grid.Row="7" Grid.Column="3" Height="20" Width="120"></PasswordBox>
-        <PasswordBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="3" Height="20" Width="120"></PasswordBox>
-        <Button  x:Name="btnSumbit" Content="Submit" FontSize="8" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="15" Width="80"></Button>
+        <TextBox x:Name="txtID" Grid.Row="1" Grid.Column="1" Height="20" Width="120" Text="{Binding EmployeeID}"></TextBox>
+        <TextBox x:Name="txtFullName" Grid.Row="2" Grid.Column="1" Height="20" Width="120" Text="{Binding EmployeeFullName}"></TextBox>
+        <DatePicker x:Name="dpDob" Grid.Row="3" Grid.Column="1" Height="20" Width="120" SelectedDate="{Binding Dob}"></DatePicker>
+        <TextBox x:Name="txtAge" Grid.Row="4" Grid.Column="1" Height="20" Width="120" Text="{Binding Age}"></TextBox>
+        <TextBox x:Name="txtAdhaarNumber" Grid.Row="5" Grid.Column="1" Height="20" Width="120" Text="{Binding AdhaarNumber}"></TextBox>
+        <TextBox x:Name="txtFatherNamer" Grid.Row="6" Grid.Column="1" Height="20" Width="120" Text="{Binding FatherName}"></TextBox>
+        <TextBox x:Name="txtMotherName" Grid.Row="7" Grid.Column="1" Height="20" Width="120" Text="{Binding MotherName}"></TextBox>
+        <TextBox x:Name="txtAddress" Grid.Row="8" Grid.Column="1" Height="20" Width="120" Text="{Binding Address}"></TextBox>
+        <TextBox x:Name="txtDistrict" Grid.Row="9" Grid.Column="1" Height="20" Width="120" Text="{Binding District}"></TextBox>
+        <TextBox x:Name="txtPincode" Grid.Row="10" Grid.Column="1" Height="20" Width="120" Text="{Binding Pincode}"></TextBox>
+        <TextBox x:Name="txtState" Grid.Row="1" Grid.Column="3" Height="20" Width="120" Text="{Binding State}"></TextBox>
+        <TextBox x:Name="txtContactNumber" Grid.Row="2" Grid.Column="3" Height="20" Width="120" Text="{Binding ContactNumber}"></TextBox>
+        <TextBox x:Name="txtEmailId" Grid.Row="3" Grid.Column="3" Height="20" Width="120" Text="{Binding EmailID}"></TextBox>
+        <DatePicker x:Name="dpJoinDate" Grid.Row="4" Grid.Column="3" Height="20" Width="120" SelectedDate="{Binding JoinDate}"></DatePicker>
+        <TextBox x:Name="txtOsp" Grid.Row="5" Grid.Column="3" Height="20" Width="120" Text="{Binding OtherSubmittedProof}"></TextBox>
+        <TextBox x:Name="txtUserName" Grid.Row="6" Grid.Column="3" Height="20" Width="120" Text="{Binding UserName}"></TextBox>
+        <TextBox x:Name="txtPassword" Grid.Row="7" Grid.Column="3" Height="20" Width="120" Text="{Binding Password}"></TextBox>
+        <TextBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="3" Height="20" Width="120" Text="{Binding ConfirmPassword}"></TextBox>
+        <Button  x:Name="btnSumbit" Content="Submit" FontSize="8" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="15" Width="80"  Command="{Binding submitCommand}" Click="btnSumbit_Click"  ></Button>
     </Grid>
 </Page>

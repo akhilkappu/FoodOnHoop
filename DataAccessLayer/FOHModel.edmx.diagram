@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4bb2ad3c8db14aeebf6177bcd954257f" Name="Diagram1">
+        <EntityTypeShape EntityType="FoodonHoopDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblCustomer" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblEmployee" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblMenu" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblOrder" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblAdminAccess" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblLoginData" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="FoodonHoopDBModel.FK_tblMenu_tblCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodonHoopDBModel.FK_tblOrder_tblCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodonHoopDBModel.FK_tblOrder_tblEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodonHoopDBModel.FK_tblOrder_tblMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodonHoopDBModel.FK_tblAdminAcess_tblOrder" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

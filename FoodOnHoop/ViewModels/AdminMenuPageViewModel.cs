@@ -5,21 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace FoodOnHoop.ViewModels
 {
-    public class AllTimeChillersViewModel:BaseViewModel
+   public  class AdminMenuPageViewModel : BaseViewModel
     {
         public Category category;
-        public List<Category> alltime { get; set; }
-      //  public ICommand alltime { get; set; }
 
-        public AllTimeChillersViewModel()
+        public List<Category> categories { get; set; }
+
+        public AdminMenuPageViewModel()
         {
-            alltime = new List<Category>();
+            categories = new List<Category>();
             MenuCategoryBusiness menuCategoryBusiness = new MenuCategoryBusiness();
-            alltime = menuCategoryBusiness.AllTimeBl();
+            categories = menuCategoryBusiness.MenuDataBl();
         }
+
     }
 }
