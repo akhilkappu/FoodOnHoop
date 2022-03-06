@@ -14,7 +14,7 @@
     <Grid>
         <Grid>
             <ListView Background="Transparent" Margin="56,56,354,9">
-                <DataGrid Name="grdEmployee" ColumnWidth="*" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Width="693" >
+                <DataGrid Name="grdEmployee" ColumnWidth="SizeToCells" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Width="693" >
                     <!--ItemsSource="{Binding list}"-->
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}"  IsReadOnly="True">
@@ -81,7 +81,7 @@
             <Label Content="Address" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
             <Label Content="District" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
             <Label Content="Pincode" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
-            <Label Content="District" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
+            <Label Content="State" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"></Label>
             <TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
             <TextBox x:Name="txtEditEmployeeName" HorizontalAlignment="Left" Margin="139,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
             <TextBox x:Name="txtEditContactNo" HorizontalAlignment="Left" Margin="139,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
