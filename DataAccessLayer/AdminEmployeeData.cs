@@ -75,7 +75,7 @@ namespace DataAccessLayer
             {
                 throw ex;
             }
-        }
+        }   
         public void UpdateEmployeeData(FoodOnHoopModel productModel)
         {
             try
@@ -90,7 +90,7 @@ namespace DataAccessLayer
 
                     item.EmployeeID = productModel.EmployeeID;
                     item.EmployeeFullName = productModel.EmployeeFullName;
-                    item.Dob = productModel.Dob;
+                    //item.Dob = productModel.Dob;
                     //item.Age = productModel.Age;
                     //item.AdhaarNumber = productModel.AdhaarNumber;
                     //item.FatherName = productModel.FatherName;

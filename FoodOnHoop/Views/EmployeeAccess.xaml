@@ -13,42 +13,44 @@
     </Page.Background>
     <Grid>
         <Grid Margin="10,25,400,2">
-            <Label Content="Customer Name" HorizontalAlignment="Left" Margin="40,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
-            <Label Content="Contact No" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontSize="16" FontWeight="Bold"/>
-            <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="40,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtCustomerPhone" HorizontalAlignment="Left" Margin="200,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
+            <!--<Label Content="ID" HorizontalAlignment="Left" Margin="28,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>-->
+            <!--<Label Content="Customer Name" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Contact No" HorizontalAlignment="Left" Margin="158,20,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontSize="16" FontWeight="Bold"/>
+            <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="18,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" FontSize="14" />
+            <TextBox x:Name="txtCustomerPhone" HorizontalAlignment="Left" Margin="160,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>-->
+            <ComboBox x:Name="cbPaymentStatus" Text="{Binding ElementName=UserGrid, Path=SelectedItem.PaymentStatus}" HorizontalAlignment="Left" Margin="18,100,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14">
+                <ComboBoxItem x:Name="cbiPaid" Content="Paid" ></ComboBoxItem>
+                <ComboBoxItem x:Name="cbiUnPaid" Content="UnPaid" ></ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="cbFoodStatus" Text="{Binding ElementName=UserGrid, Path=SelectedItem.FoodStatus}" HorizontalAlignment="Left" Margin="160,100,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14">
+                <ComboBoxItem x:Name="cbiProcesssing" Content="Processing" ></ComboBoxItem>
+                <ComboBoxItem x:Name="cbiDelivered" Content="Delivered" ></ComboBoxItem>
+                <ComboBoxItem x:Name="cbiNil" Content="----" ></ComboBoxItem>
+            </ComboBox>
         </Grid>
-        <Grid Margin="10,120,400,2">
-            <ListView x:Name="lstUserGrid" Background="Transparent" >
-                <DataGrid x:Name="grdMenu" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" Width="370" Height="310" Background="Transparent">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="OrderID" IsReadOnly="True">
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="MenuID" IsReadOnly="True">
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Item Name" IsReadOnly="True">
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Quantity" IsReadOnly="True">
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Total" IsReadOnly="True">
-                        </DataGridTextColumn>
-                        <DataGridTemplateColumn Header="Edit ">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <!--<Button Click="Edit">Edit</Button>-->
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Delete">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <!--<Button Click="Delete">Delete</Button>-->
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </ListView>
+
+        <Grid>
+            <Grid Margin="10,170,430,2">
+                <ListView Name="UserGrid" Background="Transparent" >
+                    <DataGrid Name="grdBill" AutoGenerateColumns="False" ColumnWidth="*" Width="300" Height="250" Background="Transparent" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Order ID" IsReadOnly="True" Binding="{Binding OrderID}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Item Name" IsReadOnly="True" Binding="{Binding ItemName}"></DataGridTextColumn >
+                            <DataGridTextColumn Header="Item Quantity" IsReadOnly="True" Binding="{Binding ItemQuantity}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Total Price" IsReadOnly="True" Binding="{Binding ItemTotalPrice}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Click="Delete">Delete</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ListView>
+            </Grid>
+            <Button Background="Transparent" Content="👈" Foreground="White" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="24" Click="Button_Click"/>
+            <Frame x:Name="Back" />
         </Grid>
         <Grid Margin="415,25,10,2"  Background="Transparent">
             <Label Content="Billing" HorizontalAlignment="Left" Margin="157,4,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
@@ -58,25 +60,38 @@
             <Label Content="Employee ID" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
             <Label Content="Price" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontWeight="Bold"/>
             <Label Content="Date" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Foreground="White" Width="100" FontWeight="Bold" Height="27"/>
-            <ComboBox x:Name="cbCategoryName" HorizontalAlignment="Left" Margin="139,39,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtAddItemName" HorizontalAlignment="Left" Margin="139,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtAddQuantity" HorizontalAlignment="Left" Margin="139,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
-            <TextBox x:Name="txtAddEmployeeID" HorizontalAlignment="Left" Margin="139,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <TextBox x:Name="txtAddPrice" HorizontalAlignment="Left" Margin="139,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
-            <!--<TextBox x:Name="txtAddDate" HorizontalAlignment="Left" Margin="139,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>-->
-            <DatePicker x:Name="dpEditdate" HorizontalAlignment="Left" Margin="139,190,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
-            <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="100,100,0,0" Width="80" FontSize="16" Height="30" FontWeight="Bold" />
-            <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="200,100,0,0" Width="80" FontSize="16" Height="30" FontWeight="Bold" />
+            <ComboBox x:Name="cbCategoryName" SelectionChanged="cbCategoryName_SelectionChanged"  HorizontalAlignment="Left" Margin="139,39,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" Text="{Binding ElementName=UserGrid,Path=SelectedItem.CategoryID}" >
+                <ComboBoxItem x:Name="cbitemFM" Content="FOM" ></ComboBoxItem>
+                <ComboBoxItem x:Name="cbitemHC" Content="Hot" ></ComboBoxItem>
+                <ComboBoxItem x:Name="cbItemATC" Content="All"></ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="cbItemName" DisplayMemberPath="ItemName" SelectedValuePath="ItemName" 
+                      SelectedValue="{Binding Path=Category}" HorizontalAlignment="Left" Margin="139,69,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" 
+                      Text="{Binding ItemName, Mode=TwoWay}">
+            </ComboBox>
+
+            <ComboBox x:Name="cbMenuID" DisplayMemberPath="MenuID" SelectedValuePath="MenuID"
+                      SelectedItem="{Binding ItemName}"
+                      SelectedValue="{Binding Path=Category}" HorizontalAlignment="Left" Margin="288,68,0,0" VerticalAlignment="Top" Width="101" Height="22" FontSize="12" 
+                      Text="{Binding ElementName=UserGrid,Path=SelectedItem.MenuID}">
+            </ComboBox>
+
+            <TextBox x:Name="txtMenuID" Text="{Binding ElementName=UserGrid,Path=SelectedItem.MenuID}" HorizontalAlignment="Left" Margin="288,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Height="22" FontSize="14" />
+            <TextBox Text="{Binding ElementName=UserGrid,Path=SelectedItem.ItemQuantity}" x:Name="txtAddQuantity" HorizontalAlignment="Left" Margin="139,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
+            <TextBox Text="{Binding ElementName=UserGrid,Path=SelectedItem.EmployeeID}" x:Name="txtAddEmployeeID" HorizontalAlignment="Left" Margin="139,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <TextBox Text="{Binding ElementName=UserGrid,Path=SelectedItem.ItemTotalPrice}" x:Name="txtAddPrice" HorizontalAlignment="Left" Margin="139,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14"/>
+            <DatePicker SelectedDate="{Binding ElementName=UserGrid, Path=SelectedItem.Date}" x:Name="dpEditdate" HorizontalAlignment="Left" Margin="139,190,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />
+            <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="100,100,0,0" Width="80" FontSize="16" Height="30" FontWeight="Bold" Click="btnAdd_Click_1" />
+            <!--<Button x:Name="btnGetTotal" Content="GetTotal" HorizontalAlignment="Left" Margin="200,100,0,0" Width="80" FontSize="16" Height="30" FontWeight="Bold"/>-->
             <Label Content="Grand Total" Margin="10,300,230,45" FontSize="20" Foreground="White" FontWeight="Bold"/>
-            <TextBox x:Name="txtGrandTotal" Margin="157,270,49,30" Width="200" Height="60" FontSize="14"/>
+            <!--<TextBox x:Name="txtGrandTotal" Margin="157,270,49,30" Width="200" Height="60" FontSize="14"/>-->
+            <TextBlock x:Name="txtBGrandTotal" Margin="157,270,49,30" Width="200" Height="60" FontSize="14"/>
+            <!--<TextBox x:Name="txtOid" HorizontalAlignment="Left" Margin="288,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Height="22" FontSize="14" />-->
             <!--<TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
             <!--<TextBox x:Name="txtEditPrice" HorizontalAlignment="Left" Margin="139,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
                 <TextBox x:Name="txtEditItemName" HorizontalAlignment="Left" Margin="139,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
         </Grid>
-        <!--<Grid Margin="438,311,25,4">-->
-
-        <!--</Grid>-->
         <!--<Button x:Name="btnLogout" Content="👈 Logout" Foreground="White" Background="Transparent" FontWeight="Bold" HorizontalAlignment="Left" Margin="711,25,0,0" VerticalAlignment="Top"/>-->
     </Grid>
-    <!--<Frame x:Name="Login"/>-->
 </Page>

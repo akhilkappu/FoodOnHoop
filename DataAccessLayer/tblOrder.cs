@@ -29,6 +29,7 @@ namespace DataAccessLayer
         public decimal ItemTotalPrice { get; set; }
         public string PaymentStatus { get; set; }
         public string FoodStatus { get; set; }
+        public string ItemName { get; set; }
     
         public virtual tblCustomer tblCustomer { get; set; }
         public virtual tblEmployee tblEmployee { get; set; }

@@ -33,6 +33,14 @@ namespace BusinessLayer
             menuSaveData.UpdateData(category);
         }
 
+        //public void SaveB(FoodOnHoopModel ifoodOn)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
+        //public void SaveL(Category category)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -11,6 +11,16 @@ namespace FoodOnHoop.ViewModels
 {
     public class HotClassicViewModel : BaseViewModel
     {
+
+        //public int GetData(string s)
+        //{
+        //    return 1;
+        //}
+        //public void GetData(string s)
+        //{
+
+        //}
+
         public Category category;
         public List<Category> hotclass { get; set; }
       //  public ICommand hotclass { get; set; }
@@ -20,6 +30,8 @@ namespace FoodOnHoop.ViewModels
             hotclass = new List<Category>();
             MenuCategoryBusiness menuCategoryBusiness = new MenuCategoryBusiness();
             hotclass = menuCategoryBusiness.HotBl();
+
+            
         }
     }
 }

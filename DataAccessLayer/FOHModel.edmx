@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FoodonHoopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FoodonHoopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'FoodonHoopDB.dbo.tblAdminAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblAdminAccess">
@@ -34,7 +34,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblAdminAccess' does not have a p
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeeFullName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Dob" Type="date" Nullable="false" />
           <Property Name="Age" Type="int" Nullable="false" />
@@ -47,7 +47,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblAdminAccess' does not have a p
           <Property Name="State" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ContactNumber" Type="bigint" Nullable="false" />
           <Property Name="EmailID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="JoinDate" Type="datetime" Nullable="false" />
+          <Property Name="JoinDate" Type="date" Nullable="false" />
           <Property Name="OtherSubmittedProof" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
@@ -84,8 +84,17 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <Property Name="ItemTotalPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="PaymentStatus" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="FoodStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_tblAdminAcess_tblOrder">
+        <EntityType Name="tblUserRole">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Admin_Orders">
           <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="1" />
           <End Role="tblAdminAccess" Type="Self.tblAdminAccess" Multiplicity="*" />
           <ReferentialConstraint>
@@ -97,7 +106,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblMenu_tblCategory">
+        <Association Name="FK_Menu_Category">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblMenu" Type="Self.tblMenu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -109,7 +118,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblOrder_tblCustomer">
+        <Association Name="FK_Orders_Customer">
           <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="1" />
           <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,6 +127,18 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
             </Principal>
             <Dependent Role="tblOrder">
               <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Menu">
+          <End Role="tblMenu" Type="Self.tblMenu" Multiplicity="1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMenu">
+              <PropertyRef Name="MenuID" />
+            </Principal>
+            <Dependent Role="tblOrder">
+              <PropertyRef Name="MenuID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -133,27 +154,13 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblOrder_tblMenu">
-          <End Role="tblMenu" Type="Self.tblMenu" Multiplicity="1" />
-          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblMenu">
-              <PropertyRef Name="MenuID" />
-            </Principal>
-            <Dependent Role="tblOrder">
-              <PropertyRef Name="MenuID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Function Name="FoodonHoopCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CustomerName" Type="varchar" Mode="In" />
-        </Function>
         <EntityContainer Name="FoodonHoopDBModelStoreContainer">
           <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblMenu" EntityType="Self.tblMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserRole" EntityType="Self.tblUserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAdminAccess" EntityType="Self.tblAdminAccess" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [tblAdminAccess].[AdminID] AS [AdminID], 
@@ -166,29 +173,28 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
     [tblLoginData].[Password] AS [Password]
     FROM [dbo].[tblLoginData] AS [tblLoginData]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_tblAdminAcess_tblOrder" Association="Self.FK_tblAdminAcess_tblOrder">
+          <AssociationSet Name="FK_Admin_Orders" Association="Self.FK_Admin_Orders">
             <End Role="tblOrder" EntitySet="tblOrder" />
             <End Role="tblAdminAccess" EntitySet="tblAdminAccess" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblMenu_tblCategory" Association="Self.FK_tblMenu_tblCategory">
+          <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
             <End Role="tblCategory" EntitySet="tblCategory" />
             <End Role="tblMenu" EntitySet="tblMenu" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblOrder_tblCustomer" Association="Self.FK_tblOrder_tblCustomer">
+          <AssociationSet Name="FK_Orders_Customer" Association="Self.FK_Orders_Customer">
             <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Menu" Association="Self.FK_Orders_Menu">
+            <End Role="tblMenu" EntitySet="tblMenu" />
             <End Role="tblOrder" EntitySet="tblOrder" />
           </AssociationSet>
           <AssociationSet Name="FK_tblOrder_tblEmployee" Association="Self.FK_tblOrder_tblEmployee">
             <End Role="tblEmployee" EntitySet="tblEmployee" />
             <End Role="tblOrder" EntitySet="tblOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblOrder_tblMenu" Association="Self.FK_tblOrder_tblMenu">
-            <End Role="tblMenu" EntitySet="tblMenu" />
-            <End Role="tblOrder" EntitySet="tblOrder" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FoodonHoopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -226,7 +232,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ContactNumber" Type="Int64" Nullable="false" />
           <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="OtherSubmittedProof" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -260,6 +266,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <NavigationProperty Name="tblEmployee" Relationship="Self.FK_tblOrder_tblEmployee" FromRole="tblOrder" ToRole="tblEmployee" />
           <NavigationProperty Name="tblMenu" Relationship="Self.FK_tblOrder_tblMenu" FromRole="tblOrder" ToRole="tblMenu" />
           <NavigationProperty Name="tblAdminAccesses" Relationship="Self.FK_tblAdminAcess_tblOrder" FromRole="tblOrder" ToRole="tblAdminAccess" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblAdminAccess">
           <Key>
@@ -369,12 +376,21 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <FunctionImport Name="FoodonHoopCustomer" ReturnType="Collection(FoodonHoopDBModel.FoodonHoopCustomer_Result)">
             <Parameter Name="CustomerName" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tblUserRoles" EntityType="FoodonHoopDBModel.tblUserRole" />
         </EntityContainer>
         <ComplexType Name="FoodonHoopCustomer_Result">
           <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="PaymentStatus" Nullable="false" MaxLength="50" />
           <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="38" Scale="0" />
         </ComplexType>
+        <EntityType Name="tblUserRole">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -434,6 +450,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <EntitySetMapping Name="tblOrders">
             <EntityTypeMapping TypeName="FoodonHoopDBModel.tblOrder">
               <MappingFragment StoreEntitySet="tblOrder">
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="MenuID" ColumnName="MenuID" />
@@ -462,15 +479,15 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="FoodonHoopCustomer" FunctionName="FoodonHoopDBModel.Store.FoodonHoopCustomer">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="FoodonHoopDBModel.FoodonHoopCustomer_Result">
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <EntitySetMapping Name="tblUserRoles">
+            <EntityTypeMapping TypeName="FoodonHoopDBModel.tblUserRole">
+              <MappingFragment StoreEntitySet="tblUserRole">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

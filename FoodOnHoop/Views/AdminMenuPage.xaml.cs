@@ -54,6 +54,8 @@ namespace FoodOnHoop.Views
                 Refresh();
                 ClearText();
             }
+            //INew newObj = new SuignUpBsiness();
+            //newObj.SaveL(category);
         }
 
         void Refresh()
