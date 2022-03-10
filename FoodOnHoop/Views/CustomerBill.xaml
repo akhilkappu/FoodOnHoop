@@ -11,13 +11,12 @@
     </UserControl.Background>
     <Grid>
         <Grid>
-            <!--<Label Content="ID" HorizontalAlignment="Left" Margin="28,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>-->
             <Label Content="Customer Name" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
             <Label Content="Contact No" HorizontalAlignment="Left" Margin="158,20,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontSize="16" FontWeight="Bold"/>
             <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="18,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" FontSize="14" />
             <TextBox x:Name="txtCustomerPhone" HorizontalAlignment="Left" Margin="160,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
-            <Button x:Name="btnAddCustomer" Content="Edit" HorizontalAlignment="Left" Margin="84,19,0,0" Width="120" FontSize="16" Height="60" FontWeight="Bold" Click="btnAddCustomer_Click" />
-            <Button x:Name="btnGotoBill" Content="Bill" HorizontalAlignment="Left" Margin="260,19,0,0" Width="120" FontSize="16" Height="60" FontWeight="Bold" Click="btnGotoBill_Click" />
+            <Button x:Name="btnAddCustomer" Content="Edit" HorizontalAlignment="Left" Margin="81,109,0,281" Width="120" FontSize="16" Height="60" FontWeight="Bold" Click="btnAddCustomer_Click" />
+            <!--<Button x:Name="btnGotoBill" Content="Bill" HorizontalAlignment="Left" Margin="260,19,0,0" Width="120" FontSize="16" Height="60" FontWeight="Bold" Click="btnGotoBill_Click" />-->
             <Frame x:Name="Main"></Frame>
         </Grid>
     </Grid>

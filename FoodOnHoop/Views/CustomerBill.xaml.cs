@@ -43,12 +43,12 @@ namespace FoodOnHoop.Views
             billingBusiness.SaveCustomerData(customerInfo);
 
             MessageBox.Show("Cus Added" + CustInc);
-            //Main.Content = new EmployeeAccess();
-        }
-
-        private void btnGotoBill_Click(object sender, RoutedEventArgs e)
-        {
             Main.Content = new EmployeeAccess();
         }
+
+        //private void btnGotoBill_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //Main.Content = new EmployeeAccess();
+        //}
     }
 }
