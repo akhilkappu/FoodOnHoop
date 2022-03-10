@@ -10,7 +10,6 @@
 
     <Page.Background>
         <ImageBrush ImageSource="/Images/signUpPage.png" />
-
     </Page.Background>
     <Grid  Background="Transparent">
         <Grid.RowDefinitions>
@@ -71,6 +70,6 @@
         <TextBox x:Name="txtUserName" Grid.Row="6" Grid.Column="3" Height="20" Width="120" Text="{Binding UserName}"></TextBox>
         <TextBox x:Name="txtPassword" Grid.Row="7" Grid.Column="3" Height="20" Width="120" Text="{Binding Password}"></TextBox>
         <TextBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="3" Height="20" Width="120" Text="{Binding ConfirmPassword}"></TextBox>
-        <Button  x:Name="btnSumbit" Content="Submit" FontSize="8" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="15" Width="80"  Command="{Binding submitCommand}" Click="btnSumbit_Click"  ></Button>
+        <Button  x:Name="btnSumbit" Content="Submit" FontSize="8" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="15" Width="80"  Command="{Binding submitCommand}" ></Button>
     </Grid>
 </Page>

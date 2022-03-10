@@ -36,5 +36,10 @@ namespace FoodOnHoop.Views
             //Main.Content = new EmployeeAccess();
             Main.Content = new CustomerBill();
         }
+
+        private void btnLoginAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AdminAccess();
+        }
     }
 }

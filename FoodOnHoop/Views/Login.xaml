@@ -21,6 +21,7 @@
         <TextBox BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5"  Margin="384,148,258,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="29" ></TextBox>
         <PasswordBox  BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5" Margin="383,201,259,0" Name="txtpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="26" />
         <Button x:Name="btnLogin" Content="Login" Height="28"  Margin="391,260,341,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Click="btnLogin_Click" ></Button>
+        <Button x:Name="btnLoginAdmin" Content="Login" Height="28"  Margin="391,300,341,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Click="btnLoginAdmin_Click" ></Button>
         <Button x:Name="btnSignUp" Content="SignUp" Height="28"  Margin="469,260,257,0"  Opacity="0.8" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Background="CadetBlue" Click="btnSignUp_Click" ></Button>
         <Frame x:Name="Main" ></Frame>
     </Grid>

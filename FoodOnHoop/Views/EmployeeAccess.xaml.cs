@@ -45,16 +45,6 @@ namespace FoodOnHoop.Views
             listBillATC = menuCategoryData.AlltimechillerBill();
             listBillFOM = menuCategoryData.FoodOnMood();
             listBillHC = menuCategoryData.HotClassicBill();
-
-            //AdminOrderViewModel adminOrderViewModel1 = new AdminOrderViewModel();
-            //grdAdminOrder.ItemsSource = adminOrderViewModel1.bills;
-            //this.DataContext = adminOrderViewModel1;
-
-            //categoryBusiness.
-            //Category category = new Category();
-            //MenuCategoryBusiness categoryBusiness = new MenuCategoryBusiness();
-            //cbCategoryName.Text = 
-            //cbCategoryName.ItemsSource = categoryBusiness.GetCategoryHot();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -78,9 +68,7 @@ namespace FoodOnHoop.Views
                 {
                     cbMenuID.Items.Add(item);
                 }
-
-
-                //MessageBox.Show("FoodOnMood Item Added");
+;
             }
             else if (cbCategoryName.SelectedItem == cbitemHC)
             {
@@ -93,7 +81,6 @@ namespace FoodOnHoop.Views
                 {
                     cbMenuID.Items.Add(item);
                 }
-                //MessageBox.Show("HotClassic Item Added");
             }
             else if (cbCategoryName.SelectedItem == cbItemATC)
             {
@@ -108,18 +95,13 @@ namespace FoodOnHoop.Views
                 {
                     cbMenuID.Items.Add(item);
                 }
-                //MessageBox.Show("AllTime Item Added"); 
             }
         }
-        //public decimal gt;
         public void btnAdd_Click_1(object sender, RoutedEventArgs e)
         {
             BillingBusiness billingBusiness = new BillingBusiness();
             Billing billing = new Billing();
             Inc = billingBusiness.GetAutoIncOrderB();
-            //CustInc = billingBusiness.GetAutoIncCusB();
-
-
             int EmployeeID = Int32.Parse(txtAddEmployeeID.Text);
             int MenuID = Int32.Parse(txtMenuID.Text);
 
@@ -177,8 +159,6 @@ namespace FoodOnHoop.Views
         {
             Back.Content = new Login();
         }
-
-
         private void Delete(object sender, RoutedEventArgs e)
         {
             try
@@ -288,15 +268,5 @@ namespace FoodOnHoop.Views
 
         //}
 
-        ////AdminOrder adminOrder = new AdminOrder();
-
-
-        //MenuInfo menuInfo = new MenuInfo();
-        //menuInfo.ItemName = ItemName;
-
-
-        //dgtItemName.Binding = (cbItemName.SelectedItem as MenuInfo).ItemName;
-
-        //txtEditEmployeeName.Text = (grdEmployee.SelectedItem as FoodOnHoopModel).EmployeeFullName.ToString();
     }
 }

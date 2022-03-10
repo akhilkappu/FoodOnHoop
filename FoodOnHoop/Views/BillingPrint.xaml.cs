@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace FoodOnHoop.Views
 {
     /// <summary>
-    /// Interaction logic for SignUp.xaml
+    /// Interaction logic for BillingPrint.xaml
     /// </summary>
-    public partial class SignUp : Page
+    public partial class BillingPrint : UserControl
     {
-        public SignUp()
+        public BillingPrint()
         {
             InitializeComponent();
-            //Svd new change Git 12.42
-            //12.47 secnd
         }
-
-        //private void btnSumbit_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
     }
 }

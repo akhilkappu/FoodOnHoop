@@ -13,11 +13,6 @@
     </Page.Background>
     <Grid>
         <Grid Margin="10,25,400,2">
-            <!--<Label Content="ID" HorizontalAlignment="Left" Margin="28,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>-->
-            <!--<Label Content="Customer Name" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
-            <Label Content="Contact No" HorizontalAlignment="Left" Margin="158,20,0,0" VerticalAlignment="Top" Foreground="White" Width="107" FontSize="16" FontWeight="Bold"/>
-            <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Margin="18,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" FontSize="14" />
-            <TextBox x:Name="txtCustomerPhone" HorizontalAlignment="Left" Margin="160,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>-->
             <ComboBox x:Name="cbPaymentStatus" Text="{Binding ElementName=UserGrid, Path=SelectedItem.PaymentStatus}" HorizontalAlignment="Left" Margin="18,100,0,0" VerticalAlignment="Top" Width="121" Height="22" FontSize="14">
                 <ComboBoxItem x:Name="cbiPaid" Content="Paid" ></ComboBoxItem>
                 <ComboBoxItem x:Name="cbiUnPaid" Content="UnPaid" ></ComboBoxItem>
@@ -73,7 +68,7 @@
 
             <ComboBox x:Name="cbMenuID" DisplayMemberPath="MenuID" SelectedValuePath="MenuID"
                       SelectedItem="{Binding ItemName}"
-                      SelectedValue="{Binding Path=Category}" HorizontalAlignment="Left" Margin="288,68,0,0" VerticalAlignment="Top" Width="101" Height="22" FontSize="12" 
+                      SelectedValue="{Binding Path=Category}" HorizontalAlignment="Left" Margin="288,68,0,0" VerticalAlignment="Top" Width="69" Height="22" FontSize="12" 
                       Text="{Binding ElementName=UserGrid,Path=SelectedItem.MenuID}">
             </ComboBox>
 
@@ -86,7 +81,7 @@
             <!--<Button x:Name="btnGetTotal" Content="GetTotal" HorizontalAlignment="Left" Margin="200,100,0,0" Width="80" FontSize="16" Height="30" FontWeight="Bold"/>-->
             <Label Content="Grand Total" Margin="10,300,230,45" FontSize="20" Foreground="White" FontWeight="Bold"/>
             <!--<TextBox x:Name="txtGrandTotal" Margin="157,270,49,30" Width="200" Height="60" FontSize="14"/>-->
-            <TextBlock x:Name="txtBGrandTotal" Margin="157,270,49,30" Width="200" Height="60" FontSize="14"/>
+            <TextBlock x:Name="txtBGrandTotal" Foreground="White" Margin="157,270,49,30" Width="200" Height="70" FontSize="50"/>
             <!--<TextBox x:Name="txtOid" HorizontalAlignment="Left" Margin="288,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Height="22" FontSize="14" />-->
             <!--<TextBox x:Name="txtEditID" HorizontalAlignment="Left" Margin="139,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Height="22" FontSize="14" />-->
             <!--<TextBox x:Name="txtEditPrice" HorizontalAlignment="Left" Margin="139,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" FontSize="14"/>
