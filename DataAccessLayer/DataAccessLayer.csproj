@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="AdminEmployeeData.cs" />
     <Compile Include="AdminOrderData.cs" />
+    <Compile Include="BillingData.cs" />
     <Compile Include="FOHModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +97,9 @@
       <DependentUpon>FOHModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tblOrder.cs">
+      <DependentUpon>FOHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserRole.cs">
       <DependentUpon>FOHModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

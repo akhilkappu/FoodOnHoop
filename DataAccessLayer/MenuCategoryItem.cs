@@ -81,6 +81,59 @@ namespace DataAccessLayer
             }
             return getmenu;
         }
-      
+
+        public List<Category> AlltimechillerBill()
+        {
+            List<Category> categorylist = new List<Category>();
+            FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
+            var result = from alltime in foodonHoopDBEntities.tblMenus
+                         where alltime.CategoryID == 2
+                         select alltime;
+            foreach (var item in result)
+            {
+                Category onHoop = new Category();
+                onHoop.MenuID = item.MenuID;
+                onHoop.ItemName = item.Item;
+                onHoop.Price = item.Price;
+                categorylist.Add(onHoop);
+            }
+            return categorylist;
+        }
+        public List<Category> FoodOnMoodBill()
+        {
+            List<Category> categorylist = new List<Category>();
+            FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
+            var result = from alltime in foodonHoopDBEntities.tblMenus
+                         where alltime.CategoryID == 1
+                         select alltime;
+            foreach (var item in result)
+            {
+                Category onHoop = new Category();
+                onHoop.MenuID = item.MenuID;
+                onHoop.ItemName = item.Item;
+                onHoop.Price = item.Price;
+                categorylist.Add(onHoop);
+            }
+            return categorylist;
+        }
+        public List<Category> HotClassicBill()
+        {
+            List<Category> categorylist = new List<Category>();
+            FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
+            var result = from alltime in foodonHoopDBEntities.tblMenus
+                         where alltime.CategoryID == 3
+                         select alltime;
+            foreach (var item in result)
+            {
+                Category onHoop = new Category();
+                //onHoop.MenuID = item.MenuID;
+                onHoop.ItemName = item.Item;
+                //onHoop.Price = item.Price;
+                categorylist.Add(onHoop);
+            }
+            return categorylist;
+
+        }
+
     }
 }

@@ -17,6 +17,7 @@
         <AssociationConnector Association="FoodonHoopDBModel.FK_tblOrder_tblEmployee" ManuallyRouted="false" />
         <AssociationConnector Association="FoodonHoopDBModel.FK_tblOrder_tblMenu" ManuallyRouted="false" />
         <AssociationConnector Association="FoodonHoopDBModel.FK_tblAdminAcess_tblOrder" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FoodonHoopDBModel.tblUserRole" Width="1.5" PointX="8.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

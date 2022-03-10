@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminOrder.cs" />
+    <Compile Include="Billing.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="FoodOnHoopModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

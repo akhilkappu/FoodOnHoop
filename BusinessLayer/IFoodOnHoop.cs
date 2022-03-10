@@ -13,4 +13,11 @@ namespace BusinessLayer
         void SaveDataBl(Category category);
 
     }
+
+    //public interface INew
+    //{
+    //    void SaveB(FoodOnHoopModel ifoodOn);
+    //    void SaveL(Category category);
+
+    //}
 }
