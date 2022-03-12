@@ -45,7 +45,7 @@ namespace EntityLayer
     {
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
-        public int ContactNumber { get; set; }
+        public long ContactNumber { get; set; }
     }
 
     public class AutoInc

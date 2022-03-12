@@ -29,7 +29,7 @@ namespace FoodOnHoop.Commands
             {
                 SignUpBusiness signUpBusiness = new SignUpBusiness();
                 FoodOnHoopModel foodOnHoopModel = new FoodOnHoopModel();
-                foodOnHoopModel.EmployeeID = signUpViewModel.EmployeeID;
+                //foodOnHoopModel.EmployeeID = signUpViewModel.EmployeeID;
                 foodOnHoopModel.EmployeeFullName = signUpViewModel.EmployeeFullName;
                 foodOnHoopModel.Dob = signUpViewModel.Dob;
                 foodOnHoopModel.Age = signUpViewModel.Age;
@@ -47,6 +47,11 @@ namespace FoodOnHoop.Commands
                 foodOnHoopModel.UserName = signUpViewModel.UserName;
                 foodOnHoopModel.Password = signUpViewModel.Password;
                 signUpBusiness.SaveSignUpB(foodOnHoopModel);
+
+                //LoginData loginData = new LoginData();
+                //loginData.UserName = signUpViewModel.UserName;
+                //loginData.Password = signUpViewModel.Password;
+                //signUpBusiness.SaveLoginB(loginData);
             }
             catch (Exception ex)
             {

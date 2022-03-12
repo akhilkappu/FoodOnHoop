@@ -9,9 +9,26 @@
       Title="AdminAccess">
 
     <Page.Background>
-        <ImageBrush ImageSource="/Images/Admin.png"/>
+        <ImageBrush ImageSource="/Images/adminpageNew.png" />
+        <!--<ImageBrush ImageSource="/Images/admin.png"/>-->
     </Page.Background>
     <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="38,52,0,0" TextWrapping="Wrap" Text="Dashboard" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="18" FontFamily="Comic Sans MS"/>
+        <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="76" Margin="48,94,0,0" VerticalAlignment="Top" Width="230" RadiusY="5" RadiusX="5" Opacity="0.5">
+        </Rectangle>
+        <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="72" Margin="48,205,0,0" VerticalAlignment="Top" Width="230" RadiusY="5" RadiusX="5" Opacity="0.5"/>
+        <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="82" Margin="48,308,0,0" VerticalAlignment="Top" Width="230" RadiusY="5" RadiusX="5" Opacity="0.5"/>
+        <Button x:Name="btnAdminMenuPage" Content="☕" HorizontalAlignment="Left" Margin="197,106,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="51" Height="50" FontSize="28" Click="btnAdminMenuPage_Click" />
+        <Button x:Name="btnAdminEmployeePage" Content="👨🏻‍🍳" HorizontalAlignment="Left" Margin="192,324,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="56" Height="46" FontSize="28" Click="btnAdminEmployeePage_Click"/>
+        <Button x:Name="btnAdminOrderPage" Content="🗒️" HorizontalAlignment="Left" Margin="194,216,0,0" Background="Transparent" Foreground="White" VerticalAlignment="Top" Width="56" Height="50" FontSize="28" Click="btnAdminOrderPage_Click"/>
+        <Label Content="MENU" HorizontalAlignment="Left" Margin="69,112,0,0" VerticalAlignment="Top" Width="84" Foreground="White" Height="32" FontSize="20" FontFamily="arial"/>
+        <Label Content="EMPLOYEE" HorizontalAlignment="Left" Margin="64,335,0,0" VerticalAlignment="Top" Width="118" Foreground="White" Height="28" FontSize="20" FontFamily="arial"/>
+        <Label Content="ORDER" HorizontalAlignment="Left" Margin="64,225,0,0" VerticalAlignment="Top" Width="105" Foreground="White" Height="32" FontSize="20" FontFamily="arial"/>
+        <Button x:Name="btnadminlogout" Content="Logout" Background="Transparent" HorizontalAlignment="Left" Foreground="White" Height="40" Margin="673,15,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="16" Click="btnadminlogout_Click"/>
+        <Frame x:Name="Admin"  />
+    </Grid>
+
+    <!--<Grid>
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="69,52,0,0" TextWrapping="Wrap" Text="Dashboard" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="18" FontFamily="Comic Sans MS"/>
         <Rectangle Fill="#FF784D3E" HorizontalAlignment="Left" Height="151" Margin="48,94,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5" Opacity="0.5">
         </Rectangle>
@@ -26,6 +43,6 @@
         <Label Content="ORDER" HorizontalAlignment="Left" Margin="158,314,0,0" VerticalAlignment="Top" Width="118" Foreground="White" Height="46" FontSize="30" FontFamily="arial"/>
         <Button x:Name="btnadminlogout" Content="Logout" Background="Transparent" HorizontalAlignment="Left" Foreground="White" Height="40" Margin="673,15,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="16" Click="btnadminlogout_Click"/>
         <Frame x:Name="Admin" Margin="0,2,0,-2" />
-    </Grid>
+    </Grid>-->
 
 </Page>

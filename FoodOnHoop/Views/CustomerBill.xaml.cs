@@ -34,17 +34,19 @@ namespace FoodOnHoop.Views
             CustInc = billingBusiness.GetAutoIncCusB();
 
             string CustomerName = txtCustomerName.Text;
-            int ContactNumber = Int32.Parse(txtCustomerPhone.Text);
+            long ContactNumber = Int64.Parse(txtCustomerPhone.Text);
 
             CustomerInfo customerInfo = new CustomerInfo();
             customerInfo.CustomerID = CustInc;
             customerInfo.CustomerName = CustomerName;
-            customerInfo.ContactNumber = ContactNumber;
+            customerInfo.ContactNumber = (long)ContactNumber;
             billingBusiness.SaveCustomerData(customerInfo);
 
             MessageBox.Show("Cus Added" + CustInc);
             Main.Content = new EmployeeAccess();
         }
+
+        
 
         //private void btnGotoBill_Click(object sender, RoutedEventArgs e)
         //{

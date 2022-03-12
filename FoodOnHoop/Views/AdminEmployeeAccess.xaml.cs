@@ -35,10 +35,7 @@ namespace FoodOnHoop.Views
             grdEmployee.ItemsSource = adminEmployeeBusiness.GetEmployees();
 
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Back.Content = new AdminAccess();
-        }
+        
 
         private void btnDeleteInGrid(object sender, RoutedEventArgs e)
         {
@@ -51,7 +48,7 @@ namespace FoodOnHoop.Views
                     AdminEmployeeBusiness adminEmployeeBusiness = new AdminEmployeeBusiness();
                     onHoopModel.EmployeeID = value;
                     adminEmployeeBusiness.DeleteEmployee(onHoopModel);
-                    MessageBox.Show("Product Deleted :" + onHoopModel.EmployeeID);
+                    MessageBox.Show("Deleted :" + onHoopModel.EmployeeID);
                     Refresh();
                 }
                 else
@@ -93,7 +90,7 @@ namespace FoodOnHoop.Views
                 foodOnHoop.EmployeeID = id;
                 foodOnHoop.EmployeeFullName = (string)txtEditEmployeeName.Text;
                 foodOnHoop.Address = (string)txtEditAddress.Text;
-                foodOnHoop.ContactNumber = Int32.Parse(txtEditContactNo.Text);
+                foodOnHoop.ContactNumber = Int64.Parse(txtEditContactNo.Text);
                 foodOnHoop.District = (string)txtEditDistrict.Text;
                 foodOnHoop.State = (string)txtEditState.Text;
                 foodOnHoop.Pincode = Int32.Parse(txtEditPincode.Text);
@@ -124,6 +121,11 @@ namespace FoodOnHoop.Views
                 txtEditID.Text = string.Empty;
                 txtEditPincode.Text = string.Empty;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Back.Content = new AdminAccess();
         }
     }
 }

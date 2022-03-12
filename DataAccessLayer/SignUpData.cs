@@ -39,11 +39,16 @@ namespace DataAccessLayer
             {
                 throw ex;
             }
-           
+        }
 
-
-
-
+        public void SaveLoginData(LoginData loginData)
+        {
+            FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
+            tblLoginData tblLogin = new tblLoginData();
+            tblLogin.UserName = loginData.UserName;
+            tblLogin.Password = loginData.Password;
+            dBEntities.tblLoginDatas.Add(tblLogin);
+            dBEntities.SaveChanges();
         }
     }
 }

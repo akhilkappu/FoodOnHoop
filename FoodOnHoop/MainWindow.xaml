@@ -11,14 +11,34 @@
         <ContentControl Content="{Binding SelectedViewModel}"></ContentControl>
         <Menu Name="MenuSample"  VerticalAlignment="Top" Height="435" Foreground="white" Background="{x:Null}">
             <MenuItem Header="Home" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Home"></MenuItem>
-            <MenuItem Header="Menu" FontWeight="Bold" Height="30" Width="70" Background="{x:Null}" >
-                <MenuItem Header="Food On Mood" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="FoodOnMood"/>
-                <MenuItem Header="Hot Classics" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="HotClassic"/>
-                <MenuItem Header="All Time Chillers" Background="{x:Null}" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="AllTimeChillers"/>
+            <MenuItem Header="Menu 🔽" FontWeight="Bold" Height="30" Width="70" Background="{x:Null}" >
+                <MenuItem Header="Food On Mood" Background="#FF9D9995" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="FoodOnMood">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/signUpiconT.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Hot Classics" Background="#FF9D9995" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="HotClassic">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/HotCLI.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="All Time Chillers" Background="#FF9D9995" FontWeight="Bold" Height="30"  Command="{Binding RedirectCommand}" CommandParameter="AllTimeChillers">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/AllTimeIcon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="Login/SignUp" FontWeight="Bold" Height="30" Width="100" Background="{x:Null}">
-                <MenuItem Header="Login" Background="{x:Null}"  Foreground="Black" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>
-                <MenuItem Header="SignUp" Background="{x:Null}"  Foreground="Black" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="SignUp"></MenuItem>
+            <MenuItem Header="Login/SignUp 🔽" FontWeight="Bold" Height="30" Width="130" Background="{x:Null}">
+                <MenuItem Header="Login" Background="#FF9D9995"  Foreground="White" FontWeight="Bold" Height="30" Command="{Binding RedirectCommand}" CommandParameter="Login">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/LoginIcon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="SignUp" Background="#FF9D9995"  Foreground="White" FontWeight="Bold" Height="30" Command="{Binding RedirectCommand}" CommandParameter="SignUp">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/signUpiconT.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             
             <!--<MenuItem Header="Login" FontWeight="Bold" Height="30" Width="80" Command="{Binding RedirectCommand}" CommandParameter="Login"></MenuItem>-->

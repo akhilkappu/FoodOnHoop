@@ -45,6 +45,9 @@ namespace FoodOnHoop.Views
             listBillATC = menuCategoryData.AlltimechillerBill();
             listBillFOM = menuCategoryData.FoodOnMood();
             listBillHC = menuCategoryData.HotClassicBill();
+
+            AdminMenuPageViewModel adminMenuPageViewModel = new AdminMenuPageViewModel();
+            grdMenu.ItemsSource = adminMenuPageViewModel.categories;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -137,7 +140,6 @@ namespace FoodOnHoop.Views
             billingBusiness.SaveBillData(billing);//----------
 
             MessageBox.Show("Saved");
-
             Refresh();
             decimal sum = 0m;
             for (int ito = 0; ito < grdBill.Items.Count - 1; ito++)
@@ -195,6 +197,11 @@ namespace FoodOnHoop.Views
         private void btnGetTotal(object sender, RoutedEventArgs e)
         {
             //decimal GrandTotal = GrandTotal + 
+        }
+
+        private void btnGoToBill_Click(object sender, RoutedEventArgs e)
+        {
+            Back.Content = new BillingPrint();
         }
 
         //private void btnEdit_Click(object sender, RoutedEventArgs e)

@@ -33,8 +33,8 @@ namespace DataAccessLayer
         public virtual DbSet<tblMenu> tblMenus { get; set; }
         public virtual DbSet<tblOrder> tblOrders { get; set; }
         public virtual DbSet<tblAdminAccess> tblAdminAccesses { get; set; }
-        public virtual DbSet<tblLoginData> tblLoginDatas { get; set; }
         public virtual DbSet<tblUserRole> tblUserRoles { get; set; }
+        public virtual DbSet<tblLoginData> tblLoginDatas { get; set; }
     
         public virtual ObjectResult<FoodonHoopCustomer_Result> FoodonHoopCustomer(string customerName)
         {
