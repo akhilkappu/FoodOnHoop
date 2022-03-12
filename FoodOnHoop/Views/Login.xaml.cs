@@ -37,7 +37,7 @@ namespace FoodOnHoop.Views
             }
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
-            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblLoginData where UserName=@UserName and Password=@Password", scn);
+            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblEmployee where UserName=@UserName and Password=@Password", scn);
             scmd.Parameters.Clear();
             scmd.Parameters.AddWithValue("@UserName", txtusername.Text);
             scmd.Parameters.AddWithValue("@Password", pwpassword.Password);
@@ -78,7 +78,7 @@ namespace FoodOnHoop.Views
 
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
-            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblEmployee where UserName=@UserName and Password=@Password", scn);
+            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblLoginData where UserName=@UserName and Password=@Password", scn);
             scmd.Parameters.Clear();
             scmd.Parameters.AddWithValue("@UserName", txtusername.Text);
             scmd.Parameters.AddWithValue("@Password", pwpassword.Password);
