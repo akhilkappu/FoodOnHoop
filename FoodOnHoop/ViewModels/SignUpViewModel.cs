@@ -11,7 +11,7 @@ namespace FoodOnHoop.ViewModels
 {
    public class SignUpViewModel:BaseViewModel
     {
-        private FoodOnHoopModel foodOnHoopModel;
+        public FoodOnHoopModel foodOnHoopModel;
         public ICommand submitCommand { get; set; }
 
         public SignUpViewModel(FoodOnHoopModel foodOn)
@@ -65,9 +65,9 @@ namespace FoodOnHoop.ViewModels
             }
             //isgirg
         }
-        private int _adhaarNumber;
+        private long _adhaarNumber;
 
-        public int AdhaarNumber
+        public long AdhaarNumber
         {
             get { return _adhaarNumber; }
             set
@@ -143,9 +143,9 @@ namespace FoodOnHoop.ViewModels
                 OnPropertyChanged("State");
             }
         }
-        private int _contactNumber;
+        private long _contactNumber;
 
-        public int ContactNumber
+        public long ContactNumber
         {
             get { return _contactNumber; }
             set

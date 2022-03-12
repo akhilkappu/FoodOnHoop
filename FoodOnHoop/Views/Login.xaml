@@ -10,19 +10,14 @@
         <ImageBrush ImageSource="/Images/Login.png" />
     </UserControl.Background>
     <Grid>
-        <Label Height="38"  Margin="231,148,432,0" Name="textBlock1" Content="🙎🏻‍♂️  User Name"  VerticalAlignment="Top"   FontSize="16" FontWeight="DemiBold" ></Label>
+        <Label Height="42"  Margin="233,148,432,0" Name="textBlock1" Content="🙎🏻‍♂️  User Name"  VerticalAlignment="Top"   FontSize="16" FontWeight="DemiBold" ></Label>
         <Label Height="42" Margin="233,196,437,0" Name="textBlock2" Content="🔑 Password" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" />
-        <!--<Border  Margin="384,144,268,0" BorderThickness="2" Background="White" Opacity="0.3" CornerRadius="25">
-            <TextBox  Margin="384,144,268,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="35" ></TextBox>
-        </Border>
-        <Border Margin="388,194,273,0" BorderThickness="2" Background="White" Opacity="0.3" CornerRadius="25">
-            <PasswordBox   Margin="388,194,273,0" Name="txtpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="35" />
-        </Border>-->
-        <TextBox BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5"  Margin="384,148,258,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="29" ></TextBox>
-        <PasswordBox  BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5" Margin="383,201,259,0" Name="txtpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="26" />
-        <Button x:Name="btnLogin" Content="Login" Height="28"  Margin="391,260,341,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Click="btnLogin_Click" ></Button>
-        <Button x:Name="btnLoginAdmin" Content="Login" Height="28"  Margin="391,300,341,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Click="btnLoginAdmin_Click" ></Button>
-        <Button x:Name="btnSignUp" Content="SignUp" Height="28"  Margin="469,260,257,0"  Opacity="0.8" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Background="CadetBlue" Click="btnSignUp_Click" ></Button>
+        <Label Height="35" Margin="233,310,139,0" Foreground="Red" x:Name="lbl_Msg" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" />
+        <TextBox BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5"  Margin="383,148,258,0" Name="txtusername" VerticalAlignment="Top"  FontWeight="DemiBold" Height="29" ></TextBox>
+        <PasswordBox  BorderBrush="BlanchedAlmond" OpacityMask="BlanchedAlmond" Opacity="0.5" Margin="383,201,259,0" Name="pwpassword" VerticalAlignment="Top"  FontWeight="DemiBold" Height="26" />
+        <Button x:Name="btnLoginEmployee" Content="Login" Height="35"  Margin="383,260,330,0"  Opacity="0.7" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Width="70" Click="btnLoginEmployee_Click" ></Button>
+        <Button Content="Continue As Admin" Height="28"  Margin="383,360,272,0" x:Name="btnLoginAdmin" Opacity="0.8" VerticalAlignment="Top" FontSize="16" Foreground="BlanchedAlmond" FontWeight="DemiBold" Background="Transparent" Width="150" Click="btnLoginAdmin_Click" ></Button>
+        <Button x:Name="btnExit" Content="Exit" Height="35"  Margin="469,260,257,0"  Opacity="0.8" VerticalAlignment="Top" FontSize="16" FontWeight="DemiBold" Background="CadetBlue" Width="70" Click="btnExit_Click" ></Button>
         <Frame x:Name="Main" ></Frame>
     </Grid>
 </UserControl>

@@ -50,7 +50,7 @@
         <Label Content="User Name" Grid.Row="6" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>
         <Label Content="Password" Grid.Row="7" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>
         <!--<Label Content="Confirm Password" Grid.Row="8" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>-->
-        <TextBox x:Name="txtID" Text="{Binding EmployeeID}" Grid.Row="1" Grid.Column="1" Height="20" Width="120"></TextBox>
+        <!--<TextBox x:Name="txtID" Text="{Binding EmployeeID}" Grid.Row="1" Grid.Column="1" Height="20" Width="120"></TextBox>-->
         <TextBox x:Name="txtFullName" Text="{Binding EmployeeFullName}" Grid.Row="2" Grid.Column="1" Height="20" Width="120"></TextBox>
         <DatePicker x:Name="dpDob" SelectedDate="{Binding Dob}" Grid.Row="3" Grid.Column="1" Height="20" Width="120"></DatePicker>
         <TextBox x:Name="txtAge" Text="{Binding Age}" Grid.Row="4" Grid.Column="1" Height="20" Width="120"></TextBox>
@@ -69,6 +69,6 @@
         <TextBox x:Name="txtPassword" Text="{Binding Password}" Grid.Row="7" Grid.Column="3" Height="20" Width="120"></TextBox>
         <!--<PasswordBox x:Name="txtPassword"  Grid.Row="7" Grid.Column="3" Height="20" Width="120"></PasswordBox>
         <PasswordBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="3" Height="20" Width="120"></PasswordBox>-->
-        <Button x:Name="btnSumbit" Content="Submit" Command="{Binding submitCommand}" FontSize="16" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="30" Width="80" Margin="60,0,60,0" VerticalAlignment="Center" />
+        <Button x:Name="btnSumbit" Background="LightBlue" Foreground="White" Content="Submit" Command="{Binding submitCommand}" FontSize="16" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="30" Width="80" Margin="60,0,60,0" VerticalAlignment="Center" Click="btnSumbit_Click" />
     </Grid>
 </UserControl>

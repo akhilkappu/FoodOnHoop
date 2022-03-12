@@ -28,11 +28,15 @@ namespace BusinessLayer
             menuSaveData.DeleteData(category);
         }
         public void UpdateDataBl( Category category)
-    {
+        {
             MenuSaveData menuSaveData = new MenuSaveData();
             menuSaveData.UpdateData(category);
         }
-
+        public void SaveLoginB(LoginData login)
+        {
+            SignUpData signUpData=new SignUpData();
+            signUpData.SaveLoginData(login);
+        }
         //public void SaveB(FoodOnHoopModel ifoodOn)
         //{
         //    throw new NotImplementedException();

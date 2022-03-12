@@ -52,12 +52,9 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblAdminAccess' does not have a p
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblLoginData">
           <Key>
             <PropertyRef Name="UserName" />
-            <PropertyRef Name="Password" />
           </Key>
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
@@ -158,6 +155,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLoginData" EntityType="Self.tblLoginData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblMenu" EntityType="Self.tblMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUserRole" EntityType="Self.tblUserRole" Schema="dbo" store:Type="Tables" />
@@ -166,12 +164,6 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
     [tblAdminAccess].[AdminID] AS [AdminID], 
     [tblAdminAccess].[OrderID] AS [OrderID]
     FROM [dbo].[tblAdminAccess] AS [tblAdminAccess]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tblLoginData" EntityType="Self.tblLoginData" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tblLoginData].[UserName] AS [UserName], 
-    [tblLoginData].[Password] AS [Password]
-    FROM [dbo].[tblLoginData] AS [tblLoginData]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Admin_Orders" Association="Self.FK_Admin_Orders">
             <End Role="tblOrder" EntitySet="tblOrder" />
@@ -277,14 +269,6 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblOrder" Relationship="Self.FK_tblAdminAcess_tblOrder" FromRole="tblAdminAccess" ToRole="tblOrder" />
         </EntityType>
-        <EntityType Name="tblLoginData">
-          <Key>
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="Password" />
-          </Key>
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <Association Name="FK_tblMenu_tblCategory">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblMenu" Type="Self.tblMenu" Multiplicity="*" />
@@ -352,7 +336,6 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <EntitySet Name="tblMenus" EntityType="Self.tblMenu" />
           <EntitySet Name="tblOrders" EntityType="Self.tblOrder" />
           <EntitySet Name="tblAdminAccesses" EntityType="Self.tblAdminAccess" />
-          <EntitySet Name="tblLoginDatas" EntityType="Self.tblLoginData" />
           <AssociationSet Name="FK_tblMenu_tblCategory" Association="Self.FK_tblMenu_tblCategory">
             <End Role="tblCategory" EntitySet="tblCategories" />
             <End Role="tblMenu" EntitySet="tblMenus" />
@@ -377,6 +360,7 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
             <Parameter Name="CustomerName" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="tblUserRoles" EntityType="FoodonHoopDBModel.tblUserRole" />
+          <EntitySet Name="tblLoginDatas" EntityType="FoodonHoopDBModel.tblLoginData" />
         </EntityContainer>
         <ComplexType Name="FoodonHoopCustomer_Result">
           <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
@@ -390,6 +374,13 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblLoginData">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -471,20 +462,20 @@ warning 6002: The table/view 'FoodonHoopDB.dbo.tblLoginData' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblLoginDatas">
-            <EntityTypeMapping TypeName="FoodonHoopDBModel.tblLoginData">
-              <MappingFragment StoreEntitySet="tblLoginData">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblUserRoles">
             <EntityTypeMapping TypeName="FoodonHoopDBModel.tblUserRole">
               <MappingFragment StoreEntitySet="tblUserRole">
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserType" ColumnName="UserType" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoginDatas">
+            <EntityTypeMapping TypeName="FoodonHoopDBModel.tblLoginData">
+              <MappingFragment StoreEntitySet="tblLoginData">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

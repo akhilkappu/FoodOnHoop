@@ -29,7 +29,7 @@ namespace DataAccessLayer
                 foodOnHoopModel.District = item.District;
                 foodOnHoopModel.Pincode = (int)item.Pincode;
                 foodOnHoopModel.State = item.State;
-                foodOnHoopModel.ContactNumber = (int)item.ContactNumber;
+                foodOnHoopModel.ContactNumber = (long)item.ContactNumber;
                 foodOnHoopModel.EmailID = item.EmailID;
                 foodOnHoopModel.JoinDate = (DateTime)item.JoinDate;
                 foodOnHoopModel.OtherSubmittedProof = item.OtherSubmittedProof;
@@ -76,40 +76,37 @@ namespace DataAccessLayer
                 throw ex;
             }
         }   
-        public void UpdateEmployeeData(FoodOnHoopModel productModel)
+        public void UpdateEmployeeData(FoodOnHoopModel model)
         {
             try
             {
                 FoodonHoopDBEntities objEntities = new FoodonHoopDBEntities();
                 var query = from product in objEntities.tblEmployees
-                            where product.EmployeeID == productModel.EmployeeID
+                            where product.EmployeeID == model.EmployeeID
                             select product;
 
                 foreach (var item in query)
                 {
+                    item.EmployeeID = model.EmployeeID;
+                    item.EmployeeFullName = model.EmployeeFullName;
+                    item.Address = model.Address;
+                    item.District = model.District;
+                    item.Pincode = model.Pincode;
+                    item.State = model.State;
+                    item.ContactNumber = model.ContactNumber;
+                    item.EmailID = model.EmailID;
 
-                    item.EmployeeID = productModel.EmployeeID;
-                    item.EmployeeFullName = productModel.EmployeeFullName;
+
                     //item.Dob = productModel.Dob;
                     //item.Age = productModel.Age;
                     //item.AdhaarNumber = productModel.AdhaarNumber;
                     //item.FatherName = productModel.FatherName;
                     //item.MotherName = productModel.MotherName;
-                    item.Address = productModel.Address;
-                    item.District = productModel.District;
-                    item.Pincode = productModel.Pincode;
-                    item.State = productModel.State;
-                    item.ContactNumber = productModel.ContactNumber;
-                    item.EmailID = productModel.EmailID;
                     //item.JoinDate = productModel.JoinDate;
                     //item.OtherSubmittedProof = productModel.OtherSubmittedProof;
                     //item.UserName = productModel.UserName;
                     //item.Password = productModel.Password;
 
-                    //item.= productModel.ProductName;
-                    //item.Description = productModel.ProductDescription;
-                    //item.Price = productModel.ProductPrice;
-                    //item.Unit = productModel.ProductUnit;
                 }
                 objEntities.SaveChanges();
             }
