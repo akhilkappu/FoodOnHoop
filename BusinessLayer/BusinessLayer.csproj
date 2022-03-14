@@ -45,6 +45,7 @@
     <Compile Include="AdminOrderBusiness.cs" />
     <Compile Include="BillingBusiness.cs" />
     <Compile Include="IFoodOnHoop.cs" />
+    <Compile Include="LoginBusiness.cs" />
     <Compile Include="MenuCategoryBusiness.cs" />
     <Compile Include="SignUpBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

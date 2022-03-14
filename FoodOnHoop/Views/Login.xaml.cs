@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,9 +24,6 @@ namespace FoodOnHoop.Views
     public partial class Login : UserControl
     {
         static int attempt = 3;
-        static int adminAttempt = 5;
-        public string UserName;
-        public string Password;
         public Login()
         {
             InitializeComponent();
@@ -32,38 +31,35 @@ namespace FoodOnHoop.Views
 
         private void btnLoginEmployee_Click(object sender, RoutedEventArgs e)
         {
-            if (attempt == 0)
+            if (attempt == 1)
             {
-                lbl_Msg.Content = ("ALL 3 ATTEMPTS HAVE FAILED - CONTACT ADMIN");
+                lbl_Msg.Content = ("ALERT!!! LOGIN FAILED");
                 Main.Content = new Home();
                 return;
             }
-            UserName = txtusername.Text;
-            Password = pwpassword.Password;
+            LoginBusiness loginBusiness = new LoginBusiness();
+            FoodOnHoopModel model = new FoodOnHoopModel();
 
-            SqlConnection scn = new SqlConnection();
-            scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
-            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblEmployee where UserName=@UserName and Password=@Password", scn);
-            scmd.Parameters.Clear();
-            scmd.Parameters.AddWithValue("@UserName", txtusername.Text);
-            scmd.Parameters.AddWithValue("@Password", pwpassword.Password);
-            scn.Open();
-
-            if (scmd.ExecuteScalar().ToString() == "1")
+            model.Password = pwpassword.Password;
+            model.UserName = txtusername.Text;
+            loginBusiness.GetLoginDataBL(model);
+            int id = model.EmployeeID;
+            if (id > 1)
             {
-                //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\granted.png");
-                MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
-                Main.Content = new CustomerBill();
-            }
 
+                Main.Content = new CustomerBill();
+                MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
+               // this.Close();
+            }
             else
             {
-                //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\denied.jpg");
                 MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
-                lbl_Msg.Content = ("You Have Only " + Convert.ToString(attempt) + " Attempt Left To Try !!");
+
                 --attempt;
+                lbl_Msg.Content = ("You Have Only " + Convert.ToString(attempt) + " Attempt Left To Try !!");
                 txtusername.Clear();
                 pwpassword.Clear();
+
             }
         }
 
@@ -74,37 +70,43 @@ namespace FoodOnHoop.Views
 
         private void btnLoginAdmin_Click(object sender, RoutedEventArgs e)
         {
-            if (adminAttempt == 0)
+            if (attempt == 1)
             {
                 lbl_Msg.Content = ("ALERT!!! LOGIN FAILED");
                 Main.Content = new Home();
                 return;
             }
-            UserName = txtusername.Text;
-            Password = pwpassword.Password;
+            LoginBusiness loginBusiness = new LoginBusiness();
+            FoodOnHoopModel model = new FoodOnHoopModel();
 
-            SqlConnection scn = new SqlConnection();
-            scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
-            SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblLoginData where UserName=@UserName and Password=@Password", scn);
-            scmd.Parameters.Clear();
-            scmd.Parameters.AddWithValue("@UserName", txtusername.Text);
-            scmd.Parameters.AddWithValue("@Password", pwpassword.Password);
-            scn.Open();
+            model.Password = pwpassword.Password;
+            model.UserName = txtusername.Text;
 
-            if (scmd.ExecuteScalar().ToString() == "1")
+            loginBusiness.GetLoginDataBL(model);
+            int id = model.EmployeeID;
+            if (id == 1)
             {
-                MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
+
                 Main.Content = new AdminAccess();
+                MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
+               // this.Close();
             }
 
             else
             {
                 MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
-                lbl_Msg.Content = ("You Have Only " + Convert.ToString(adminAttempt) + " Attempt Left To Try !!");
-                --adminAttempt;
+
+                --attempt;
+                lbl_Msg.Content = ("You Have Only " + Convert.ToString(attempt) + " Attempt Left To Try !!");
                 txtusername.Clear();
                 pwpassword.Clear();
+
             }
+
         }
+
+        
     }
 }
+
+
