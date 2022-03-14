@@ -1,6 +1,7 @@
 ﻿using EntityLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,47 +12,42 @@ namespace DataAccessLayer
 {
     public class LoginOpen
     {
-        public List<FoodOnHoopModel> GetLoginData()
+        public void GetLoginData(FoodOnHoopModel onHoopModel)
         {
-            List<FoodOnHoopModel> list = new List<FoodOnHoopModel> ();
-            FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
-            
+            SqlConnection scn = new SqlConnection(@"data source = LAPTOP-68VIVQAF; database = FoodonHoopDB; integrated security = SSPI");
             try
             {
-                SqlConnection sqlConnection = null;
-                using (sqlConnection = new SqlConnection("Data Source = LAPTOP-IJI0NIKR; Database = FoodonHoopDB; Integrated Security = true;"))
+                if (scn.State == System.Data.ConnectionState.Closed)
                 {
-                    SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblLoginData where UserName=@UserName and Password=@Password", sqlConnection);
-                    scmd.Parameters.Clear();
-                    //scmd.Parameters.AddWithValue("@UserName", UserName);
-                    //scmd.Parameters.AddWithValue("@Password", Password);
-                    sqlConnection.Open();
-
-                    if (scmd.ExecuteScalar().ToString() == "1")
+                    FoodOnHoopModel foodOn = new FoodOnHoopModel();
+                    string user = onHoopModel.UserName;
+                    string password = onHoopModel.Password;
+                    scn.Open();
+                    string query = "select EmployeeID  from tblEmployee where UserName=@UserName and Password=@Password";
+                    SqlCommand scmd = new SqlCommand(query, scn);
+                    scmd.CommandType = CommandType.Text;
+                    scmd.Parameters.AddWithValue("@UserName", user);
+                    scmd.Parameters.AddWithValue("@Password", password);
+                    //int userId = Convert.ToInt32(scmd.ExecuteScalar());
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                    dataAdapter.SelectCommand = scmd;
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
+                    if (dataSet.Tables[0].Rows.Count > 0)
                     {
-                        //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\granted.png");
-                        MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
-                        //Main.Content = new AdminAccess();
+                        onHoopModel.EmployeeID = (int)dataSet.Tables[0].Rows[0]["EmployeeID"];
+
                     }
 
-                    else
-                    {
-                        //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\denied.jpg");
-                        MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
-                        //lbl_Msg.Content = ("You Have Only " + Convert.ToString(adminAttempt) + " Attempt Left To Try !!");
-                        //--adminAttempt;
-                        //txtusername.Clear();
-                        //pwpassword.Clear();
-                    }
                 }
-                
-                
+
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return list;
+
         }
     }
 }
