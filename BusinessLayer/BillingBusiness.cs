@@ -27,7 +27,11 @@ namespace BusinessLayer
             BillingData billingDataInc = new BillingData();
             return billingDataInc.GetAutoIncCusID();
         }
-
+        public int GetAutoIncCusBillB()
+        {
+            BillingData billingDataBill = new BillingData();
+            return billingDataBill.GetAutoIncCusIDBill();
+        }
         public int GetAutoIncOrderB()
         {
             BillingData billingDataInc = new BillingData();
@@ -44,5 +48,16 @@ namespace BusinessLayer
             BillingData billingData = new BillingData();
             billingData.DeleteBillData(billing);
         }
+        public List<CustomerInfo> GetCustomerB()
+        {
+            BillingData billingData = new BillingData();
+            return billingData.GetCustomerData();
+        }
+        
+        //public List<LoginData> GetloginB()
+        //{
+        //    BillingData billingData = new BillingData();
+        //    return billingData.GetLoginDatas();
+        //}
     }
 }

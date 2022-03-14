@@ -22,6 +22,9 @@ namespace FoodOnHoop.Views
     public partial class Login : UserControl
     {
         static int attempt = 3;
+        static int adminAttempt = 5;
+        public string UserName;
+        public string Password;
         public Login()
         {
             InitializeComponent();
@@ -35,6 +38,9 @@ namespace FoodOnHoop.Views
                 Main.Content = new Home();
                 return;
             }
+            UserName = txtusername.Text;
+            Password = pwpassword.Password;
+
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
             SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblEmployee where UserName=@UserName and Password=@Password", scn);
@@ -52,7 +58,6 @@ namespace FoodOnHoop.Views
 
             else
             {
-
                 //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\denied.jpg");
                 MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
                 lbl_Msg.Content = ("You Have Only " + Convert.ToString(attempt) + " Attempt Left To Try !!");
@@ -69,12 +74,14 @@ namespace FoodOnHoop.Views
 
         private void btnLoginAdmin_Click(object sender, RoutedEventArgs e)
         {
-            if (attempt == 0)
+            if (adminAttempt == 0)
             {
                 lbl_Msg.Content = ("ALERT!!! LOGIN FAILED");
                 Main.Content = new Home();
                 return;
             }
+            UserName = txtusername.Text;
+            Password = pwpassword.Password;
 
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
@@ -86,18 +93,15 @@ namespace FoodOnHoop.Views
 
             if (scmd.ExecuteScalar().ToString() == "1")
             {
-                //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\granted.png");
                 MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
                 Main.Content = new AdminAccess();
             }
 
             else
             {
-
-                //pictureBox1.Image = new Bitmap(@"C:\Users\Mic 18\Documents\Visual Studio 2015\Projects\mylogin\denied.jpg");
                 MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
-                lbl_Msg.Content = ("You Have Only " + Convert.ToString(attempt) + " Attempt Left To Try !!");
-                --attempt;
+                lbl_Msg.Content = ("You Have Only " + Convert.ToString(adminAttempt) + " Attempt Left To Try !!");
+                --adminAttempt;
                 txtusername.Clear();
                 pwpassword.Clear();
             }

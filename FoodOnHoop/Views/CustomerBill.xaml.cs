@@ -22,6 +22,7 @@ namespace FoodOnHoop.Views
     /// </summary>
     public partial class CustomerBill : UserControl
     {
+        public string CustomerName;
         public int CustInc { get; set; }
         public CustomerBill()
         {
@@ -33,7 +34,8 @@ namespace FoodOnHoop.Views
             Billing billing = new Billing();
             CustInc = billingBusiness.GetAutoIncCusB();
 
-            string CustomerName = txtCustomerName.Text;
+            //string CustomerName = txtCustomerName.Text;
+            CustomerName = txtCustomerName.Text;
             long ContactNumber = Int64.Parse(txtCustomerPhone.Text);
 
             CustomerInfo customerInfo = new CustomerInfo();
@@ -46,7 +48,12 @@ namespace FoodOnHoop.Views
             Main.Content = new EmployeeAccess();
         }
 
-        
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Login();
+        }
+
+
 
         //private void btnGotoBill_Click(object sender, RoutedEventArgs e)
         //{

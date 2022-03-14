@@ -29,13 +29,15 @@ namespace FoodOnHoop.Views
             BillingBusiness billingBusiness = new BillingBusiness();
             grdPrint.ItemsSource = billingBusiness.GetBillB();
 
-            MessageBox.Show("BillGrid");
+            MessageBox.Show("BillGenerating");
 
             Billing billing = new Billing();
             txtdate.Text = billing.Date.ToString();
 
-            CustomerInfo customerInfo = new CustomerInfo();
-            txtcustname.Text = customerInfo.CustomerName;
+            printerList.ItemsSource = billingBusiness.GetCustomerB();
+
+            //List<CustomerInfo> lst_PrinterToGridBindings = new List<CustomerInfo>();
+            //printerList.ItemsSource = lst_PrinterToGridBindings;
         }
         void Refresh()
         {
@@ -69,8 +71,18 @@ namespace FoodOnHoop.Views
                 sum += (decimal.Parse((grdPrint.Columns[3].GetCellContent(grdPrint.Items[ito]) as TextBlock).Text));
             }
             txtgrand.Text = sum.ToString();
+
+            List<CustomerInfo> lst_PrinterToGridBindings = new List<CustomerInfo>();
+            printerList.ItemsSource = lst_PrinterToGridBindings;
+
+            BillingBusiness billingBusiness = new BillingBusiness();
+            printerList.ItemsSource = billingBusiness.GetCustomerB();
             //this.txtgrand.Text = Convert.ToString( emp.GetGT());
             //MessageBox.Show("GT got");
+        }
+        private void btnToCusBill_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new CustomerBill();
         }
     }
 }

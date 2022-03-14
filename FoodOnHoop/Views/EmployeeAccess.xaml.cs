@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccessLayer;
 using EntityLayer;
 using FoodOnHoop.ViewModels;
 using System;
@@ -24,7 +23,7 @@ namespace FoodOnHoop.Views
     /// </summary>
     public partial class EmployeeAccess : Page
     {
-        FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
+        //FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
 
         public int id { get; set; }
         public List<Category> listBillATC { get; set; }
@@ -40,11 +39,12 @@ namespace FoodOnHoop.Views
         public EmployeeAccess()
         {
             InitializeComponent();
-            listBillATC = new List<Category>();
-            MenuCategoryItem menuCategoryData = new MenuCategoryItem();
-            listBillATC = menuCategoryData.AlltimechillerBill();
-            listBillFOM = menuCategoryData.FoodOnMood();
-            listBillHC = menuCategoryData.HotClassicBill();
+            //listBillATC = new List<Category>();
+            MenuCategoryBusiness categoryBusiness = new MenuCategoryBusiness();
+
+            listBillATC = categoryBusiness.GetATCBl();
+            listBillFOM = categoryBusiness.GetFoMBl();
+            listBillHC = categoryBusiness.GetHotBillBl();
 
             AdminMenuPageViewModel adminMenuPageViewModel = new AdminMenuPageViewModel();
             grdMenu.ItemsSource = adminMenuPageViewModel.categories;
@@ -85,10 +85,10 @@ namespace FoodOnHoop.Views
                     cbMenuID.Items.Add(item);
                 }
             }
-            else if (cbCategoryName.SelectedItem == cbItemATC)
+            else if (cbCategoryName.SelectedItem == cbitemATC)
             {
                 MessageBox.Show("All time Selected");
-                AllTimeChillersViewModel allTimeChillers = new AllTimeChillersViewModel();
+                //AllTimeChillersViewModel allTimeChillers = new AllTimeChillersViewModel();
 
                 foreach (var item in listBillATC)
                 {
@@ -104,7 +104,10 @@ namespace FoodOnHoop.Views
         {
             BillingBusiness billingBusiness = new BillingBusiness();
             Billing billing = new Billing();
+            CustInc = billingBusiness.GetAutoIncCusBillB();
+            billing.CustomerID = CustInc;
             Inc = billingBusiness.GetAutoIncOrderB();
+            
             int EmployeeID = Int32.Parse(txtAddEmployeeID.Text);
             int MenuID = Int32.Parse(txtMenuID.Text);
 
@@ -117,13 +120,14 @@ namespace FoodOnHoop.Views
             DateTime date = Convert.ToDateTime(dpEditdate.Text);
 
             CustomerInfo customerInfo = new CustomerInfo();
-
+            
             billing.OrderID = Inc;
 
-            var i = (from d in dBEntities.tblCustomers
-                     select d.CustomerID).Max();
+            //var i = (from d in dBEntities.tblCustomers
+            //         select d.CustomerID).Max();
 
-            billing.CustomerID = i;
+
+            
             billing.ItemQuantity = ItemQuantity;
             billing.ItemTotalPrice = ItemTotalPrice;
             billing.Date = date;

@@ -82,12 +82,12 @@ namespace DataAccessLayer
             return getmenu;
         }
 
-        public List<Category> AlltimechillerBill()
+        public List<Category> AlltimechillerBillData()
         {
             List<Category> categorylist = new List<Category>();
             FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
             var result = from alltime in foodonHoopDBEntities.tblMenus
-                         where alltime.CategoryID == 2
+                         where alltime.CategoryID == 3
                          select alltime;
             foreach (var item in result)
             {
@@ -99,7 +99,7 @@ namespace DataAccessLayer
             }
             return categorylist;
         }
-        public List<Category> FoodOnMoodBill()
+        public List<Category> FoodOnMoodBillData()
         {
             List<Category> categorylist = new List<Category>();
             FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
@@ -116,12 +116,12 @@ namespace DataAccessLayer
             }
             return categorylist;
         }
-        public List<Category> HotClassicBill()
+        public List<Category> HotClassicBillData()
         {
             List<Category> categorylist = new List<Category>();
             FoodonHoopDBEntities foodonHoopDBEntities = new FoodonHoopDBEntities();
             var result = from alltime in foodonHoopDBEntities.tblMenus
-                         where alltime.CategoryID == 3
+                         where alltime.CategoryID == 2
                          select alltime;
             foreach (var item in result)
             {

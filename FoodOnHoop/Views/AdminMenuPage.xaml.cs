@@ -50,12 +50,10 @@ namespace FoodOnHoop.Views
                 category.CategoryID = int.Parse(txtCategoryID.Text);
                 category.Price = int.Parse(txtAddPrice.Text);
                 signUpBusiness.SaveDataBl(category);
-                MessageBox.Show("Menu Item Added");
+                MessageBox.Show("Menu Item" +Name + "Added");
                 Refresh();
                 ClearText();
             }
-            //INew newObj = new SuignUpBsiness();
-            //newObj.SaveL(category);
         }
 
         void Refresh()
@@ -84,7 +82,7 @@ namespace FoodOnHoop.Views
                     SignUpBusiness signUpBusiness = new SignUpBusiness();
                     category.MenuID = value;
                     signUpBusiness.DeleteDataBl(category);
-                    MessageBox.Show("Menu Deleted");
+                    MessageBox.Show("Menu Deleted:" +value);
                     Refresh();
                 }
                 else
@@ -97,7 +95,6 @@ namespace FoodOnHoop.Views
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             Category category = new Category();
@@ -107,11 +104,9 @@ namespace FoodOnHoop.Views
             category.Price = int.Parse(txtAddPrice.Text);
             SignUpBusiness signUpBusiness =new SignUpBusiness();    
             signUpBusiness.UpdateDataBl(category);
-            MessageBox.Show("Menu Edited");
+            MessageBox.Show("Menu Edited" +id);
             Refresh();
             ClearText();
-
-
         }
         private void Edit(object sender, RoutedEventArgs e)
         {
@@ -120,10 +115,6 @@ namespace FoodOnHoop.Views
             txtAddPrice.Text = (grdMenu.SelectedItem as Category).Price.ToString();
             txtCategoryID.Text = (grdMenu.SelectedItem as Category).CategoryID.ToString();
             txtAddID.Text = (grdMenu.SelectedItem as Category).MenuID.ToString();
-
-
         }
-
-       
     }
 }

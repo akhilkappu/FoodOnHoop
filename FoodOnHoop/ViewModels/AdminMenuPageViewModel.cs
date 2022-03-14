@@ -1,4 +1,4 @@
-﻿using BusinessLayer;
+﻿    using BusinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FoodOnHoop.ViewModels
 {
    public  class AdminMenuPageViewModel : BaseViewModel
-    {
+   {
         public Category category;
 
         public List<Category> categories { get; set; }
@@ -19,7 +19,7 @@ namespace FoodOnHoop.ViewModels
             categories = new List<Category>();
             MenuCategoryBusiness menuCategoryBusiness = new MenuCategoryBusiness();
             categories = menuCategoryBusiness.MenuDataBl();
-        }
+        }   
 
-    }
+   }
 }

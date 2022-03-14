@@ -8,6 +8,6 @@ namespace FoodOnHoop.ViewModels
 {
     public class AboutUsViewModel :BaseViewModel
     {
-        //chnge done
+
     }
 }

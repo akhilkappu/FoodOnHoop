@@ -27,7 +27,6 @@ namespace FoodOnHoop.Views
         {
             InitializeComponent();
             clear();
-            
         }
         void clear()
         {
@@ -36,18 +35,56 @@ namespace FoodOnHoop.Views
             txtAdhaarNumber.Text = string.Empty;
             txtPincode.Text = string.Empty;
         }
+        //int GetDifferenceInYears(DateTime startDate, DateTime endDate)
+        //{
+        //    return (endDate.Year - startDate.Year - 1) +
+        //        (((endDate.Month > startDate.Month) ||
+        //        ((endDate.Month == startDate.Month) && (endDate.Day >= startDate.Day))) ? 1 : 0);
+        //}
+        private void dpDob_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //DobValidation();
+            //if ((DateTime.Now.Subtract(dpDob.SelectedDate.Value).Days) / (365) < 18)
+            //{
+            //    MessageBox.Show("Less than 18 Years are not allowed");
+            //    Main.Content = new Login();
+            //}
 
+            //var ageInYears = GetDifferenceInYears(dpDob.SelectedDate.Value, DateTime.Today);
+            //if (ageInYears < 18)
+            //{
+            //    //MessageBox.Show("Under age");
+            //}
+        }
+        void DobValidation()
+        {
+            if ((DateTime.Now.Subtract(dpDob.SelectedDate.Value).Days) / (365) < 18)
+            {
+                MessageBox.Show("Less than 18 Years are not allowed");
+                Main.Content = new Login();
+            }
+        }
         private void btnSumbit_Click(object sender, RoutedEventArgs e)
         {
+            
             if (txtFullName.Text == "" || txtEmailId.Text == "" || txtAddress.Text == "" || txtContactNumber.Text == "" || txtPassword.Text == "" || txtAddress.Text =="")
                 MessageBox.Show("Please Fill Mandatory Fields");
 
-            if (txtEmailId.Text.Length == 0)
+            else if ((DateTime.Now.Subtract(dpDob.SelectedDate.Value).Days) / (365) < 18)
             {
-                //errormessage.Text = "Enter an email.";
-                MessageBox.Show("Enter an email");
-                txtEmailId.Focus();
+                MessageBox.Show("Less than 18 Years are not allowed");
+                Main.Content = new Login();
             }
+            else
+            {
+                MessageBox.Show("Correct");
+            }
+
+            //if(dpDob.Text.Length == 0)
+            //{
+
+            //    dpDob.Focus();
+            //}
             //else if (!Regex.IsMatch(txtEmailId.Text, @"^[a-zA-Z][\w\.-][a-zA-Z0-9]@[a-zA-Z0-9][\w\.-][a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             //{
             //    //errormessage.Text = "Enter a valid email.";
@@ -82,8 +119,8 @@ namespace FoodOnHoop.Views
             SignUpBusiness signBusiness = new SignUpBusiness();
             LoginData login = new LoginData();
 
-            string UserName = txtUserName.Text;
-            string Password = txtPassword.Text;
+            string UserName = ("empUnKey" +txtUserName.Text);
+            string Password = ("empPwKey" +txtPassword.Text);
 
             //if (!string.IsNullOrEmpty(UserName))
             //{

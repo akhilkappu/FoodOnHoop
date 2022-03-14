@@ -26,17 +26,10 @@ namespace FoodOnHoop.Views
         public AdminEmployeeAccess()
         {
             InitializeComponent();
-
-            //AdminEmployeeViewModel viewModel = new AdminEmployeeViewModel();
-            //grdEmployee.ItemsSource = viewModel.list;
-            //this.DataContext = viewModel;
-
             AdminEmployeeBusiness adminEmployeeBusiness = new AdminEmployeeBusiness();
             grdEmployee.ItemsSource = adminEmployeeBusiness.GetEmployees();
 
         }
-        
-
         private void btnDeleteInGrid(object sender, RoutedEventArgs e)
         {
             try
@@ -53,7 +46,7 @@ namespace FoodOnHoop.Views
                 }
                 else
                 {
-                    MessageBox.Show("No Product available for Delete:??");
+                    MessageBox.Show("No Data available for Delete:??");
                 }
             }
             catch (Exception ex)
@@ -96,12 +89,10 @@ namespace FoodOnHoop.Views
                 foodOnHoop.Pincode = Int32.Parse(txtEditPincode.Text);
                 foodOnHoop.EmailID = (string)txtEditEmailId.Text;
 
-                //foodOnHoop.FatherName = 
-
                 AdminEmployeeBusiness employeeBusiness = new AdminEmployeeBusiness();
                 employeeBusiness.UpdateEmployee(foodOnHoop);
 
-                MessageBox.Show("Edited");
+                MessageBox.Show("Edited" +foodOnHoop.EmployeeFullName);
                 Refresh();
                 ClearTextBox();
             }

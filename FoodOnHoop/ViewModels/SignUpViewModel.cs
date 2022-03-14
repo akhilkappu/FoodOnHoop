@@ -42,8 +42,8 @@ namespace FoodOnHoop.ViewModels
                 OnPropertyChanged("EmployeeFullName");
             }
         }
-        private DateTime _dob = DateTime.Now;
-
+        //private DateTime _dob = DateTime.Now;
+        private DateTime _dob = DateTime.Now.AddYears(-18);
         public DateTime Dob
         {
             get { return _dob; }

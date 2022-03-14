@@ -15,7 +15,6 @@ namespace DataAccessLayer
         {
             try
             {
-
                 tblOrder tblOrderBill = new tblOrder();
                 tblEmployee tblEmployeeBill = new tblEmployee();
                 tblCustomer tblCustomerBill = new tblCustomer();
@@ -90,22 +89,43 @@ namespace DataAccessLayer
                 }
                 objEntities.SaveChanges();
 
-                //ProductDBEntities productDBEntities = new ProductDBEntities();
-                //var result = from product in productDBEntities.Products
-                //             where product.ProductID == model.ProductId
-                //             select product;
-                //foreach (var item in result)
-                //{
-                //    productDBEntities.Products.Remove(item);
-                //}
-                //productDBEntities.SaveChanges();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+        public List<CustomerInfo> GetCustomerData()
+        {
+            FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
+            List<CustomerInfo> customerList = new List<CustomerInfo>();
+            var indicators = dBEntities.Set<tblCustomer>();
 
+            var cus = indicators.Where(i => i.CustomerID >= indicators.Max(i2 => (int?)i2.CustomerID));
+            //var cus = from cusObj in dBEntities.tblCustomers
+            //          select cusObj;
+
+            foreach (var customer in cus)
+            {
+                CustomerInfo customerInfo = new CustomerInfo();
+                customerInfo.CustomerID = customer.CustomerID;
+                customerInfo.CustomerName = customer.CustomerName;
+                customerList.Add(customerInfo);
+            }
+            return customerList;
+        }
+        //public List<LoginData> GetLoginDatas()
+        //{ Lis<LoginData> list = new Lis<LoginData>();
+        //FoodonHoopDBEntities dBEntities = new FoodonHoopDBEntities();
+        //List<CustomerInfo> customerList = new List<CustomerInfo>();SqlConnection scn = new SqlConnection();
+        //scn.ConnectionString = @"data source = LAPTOP-IJI0NIKR; database = FoodonHoopDB; integrated security = SSPI";
+        //    SqlCommand scmd = new SqlCommand("select count (*) as cnt from tblLoginData where UserName=@UserName and Password=@Password", scn);
+        //scmd.Parameters.Clear();
+        //    scmd.Parameters.AddWithValue("@UserName", txtusername.Text);
+        //    scmd.Parameters.AddWithValue("@Password", pwpassword.Password);
+        //    scn.Open();
+
+        //}
         //public void BillingUpdate(Billing billing)
         //{
         //    try
@@ -136,6 +156,9 @@ namespace DataAccessLayer
         //    }
         //}
 
+        //var i = (from d in dBEntities.tblCustomers
+        //         select d.CustomerID).Max();
+
         public int GetAutoIncOrderID()
         {
             AutoInc auto = new AutoInc();
@@ -156,6 +179,15 @@ namespace DataAccessLayer
                      select d.CustomerID).Max();
 
             return i + 1;
+        }
+        public int GetAutoIncCusIDBill()
+        {
+            AutoInc auto = new AutoInc();
+
+
+            var i = (from d in dBEntities.tblCustomers
+                     select d.CustomerID).Max();
+            return i;
         }
     }
 }
