@@ -33,5 +33,22 @@ namespace BusinessLayer
             MenuCategoryItem menuCategoryItem = new MenuCategoryItem();
             return menuCategoryItem.GetMenuData();
         }
-    }
+        public List<Category> GetHotBillBl()
+        {
+            MenuCategoryItem menuCategoryItem = new MenuCategoryItem();
+            return menuCategoryItem.HotClassicBillData();
+
+        }
+        public List<Category> GetFoMBl()
+        {
+            MenuCategoryItem menuCategoryItem = new MenuCategoryItem();
+            return menuCategoryItem.FoodOnMoodBillData();
+
+        }
+        public List<Category> GetATCBl() 
+        {
+            MenuCategoryItem menuCategoryItem = new MenuCategoryItem();
+            return menuCategoryItem.AlltimechillerBillData();
+        }
+    }   
 }

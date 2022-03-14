@@ -55,7 +55,6 @@ namespace FoodOnHoop.Commands
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

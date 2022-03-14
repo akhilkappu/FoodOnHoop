@@ -144,7 +144,7 @@ namespace EntityLayer
         {
             get { return _username; }
             set { _username = value; }
-        }
+        }   
         private string _password;
         public string Password
         {

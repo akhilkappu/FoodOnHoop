@@ -10,8 +10,22 @@
         <ImageBrush ImageSource="/Images/Home.png" />
     </UserControl.Background>
     <Grid>
-        <TextBlock Text="Food On Hoop" Margin="26,134,409,96" Foreground="#FFFFF9F9" FontWeight="Normal" FontStyle="Normal" FontFamily="Arial Narrow" FontSize="48"></TextBlock>
-        <Label Margin="146,165,344,79" Content=" A lot can happen   over a coffee☕ " Foreground="#FF5A2B2B" FontFamily="Freestyle Script" FontSize="24"></Label>
-   
+        <TextBlock Text="Food On Hoop" Margin="26,134,409,187" Foreground="#FFFFF9F9" FontWeight="Normal" FontStyle="Normal" FontFamily="Arial Narrow" FontSize="48"></TextBlock>
+        <Label Margin="146,165,344,187" Content=" A lot can happen   over a coffee☕ " Foreground="#FF5A2B2B" FontFamily="Freestyle Script" FontSize="24"></Label>
+        <Label Margin="25,300,592,80" Content="We are Working At" FontWeight="DemiBold"/>
+        <Label Margin="25,320,592,80" Content="Dine In or Take Away" FontStyle="Italic"/>
+        <Label Margin="25,345,558,55" Content="Monday - Saturday: 9am - 10pm &#10;Sunday: 11am - 6pm" >
+        </Label>
+
+
+        <Grid Margin="240 290 330 9">
+            <Label FontWeight="DemiBold" Content="We Provide &#10;"></Label>
+            <Label>
+                <Image Margin="10 20 0 0" Source="/Images/wi.png" Width="20" Height="26"/>
+            </Label>
+            <Label>
+                <!--<Image Margin="50 20 0 0" Source="/Images/GameIcn.jpg" Width="20" Height="26"/>-->
+            </Label>
+        </Grid>
     </Grid>
 </UserControl>

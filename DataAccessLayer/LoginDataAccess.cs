@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoodOnHoop.ViewModels
+namespace DataAccessLayer
 {
-    public class ContactUsViewModel:BaseViewModel
+    internal class LoginDataAccess
     {
-
     }
 }

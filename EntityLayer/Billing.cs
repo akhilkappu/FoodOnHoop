@@ -10,7 +10,7 @@ namespace EntityLayer
     {
         public int OrderID { get; set; }
         public int CustomerID { get; set; }
-        //public string CustomerName { get; set; }
+        public string CustomerName { get; set; }
         public int EmployeeID { get; set; }
         public int CategoryID { get; set; }
         public int MenuID { get; set; }

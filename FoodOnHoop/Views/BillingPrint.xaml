@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:FoodOnHoop.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
     <Grid  Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="267*"></ColumnDefinition>
@@ -17,6 +18,9 @@
         </Button>
         <Button x:Name="btnGT" Content="📝" Background="Transparent" HorizontalAlignment="Right" Margin="0,70,20,0" Width="30" Height="20" VerticalAlignment="Top" Click="btnGT_Click" >
         </Button>
+
+        <Button x:Name="btnToCusBill" Content="👈" Background="Transparent" HorizontalAlignment="Right" Margin="0,140,20,0" Width="30" Height="20" VerticalAlignment="Top" Click="btnToCusBill_Click" >
+        </Button>
         <Grid Grid.Column="1"  >
             <Grid x:Name="print" >
                 <Grid.RowDefinitions>
@@ -26,12 +30,21 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
 
+                    <ItemsControl Margin="142,59,20,60" x:Name="printerList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock  Text="{Binding CustomerName}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
                     <!--<Image Source="Assets/pinterest_board_photo.png" Width="100" Height="100" VerticalAlignment="Center"/>-->
                     <TextBlock Text="Food on Hoop" FontFamily="arial nar" FontSize="18" FontWeight="Bold" Foreground="IndianRed" Margin="20,20,100,108"/>
                     <Label Content="Customer Name" Margin="20,59,162,60"></Label>
                     <Label Content="Date Issued" Margin="20,82,162,40"></Label>
                     <Label Content="##Bill" Margin="20,105,183,20"></Label>
-                    <TextBlock x:Name="txtcustname" Margin="142,59,20,60"></TextBlock>
+                    <!--<Label x:Name="lblCusName" Margin="142,59,20,60"></Label>-->
+                    <!--<TextBlock x:Name="txtcustname" Margin="142,59,20,60"></TextBlock>-->
                     <TextBlock x:Name="txtdate" Margin="142,82,20,40"></TextBlock>
                     <TextBlock x:Name="txtinvoice" Margin="142,105,20,20"></TextBlock>
 
@@ -50,22 +63,25 @@
 
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Label Content="Sub Total" FontWeight="Light" Margin="99,6,117,118" Height="26"></Label>
+                    <!--<Label Content="Sub Total" FontWeight="Light" Margin="99,6,117,118" Height="26"></Label>
                     <TextBlock x:Name="txtgrand1" FontWeight="Medium" Margin="210,10,17,113"></TextBlock>
                     <Label Content="GST" FontWeight="Light" Margin="99,30,117,94" Height="26"></Label>
-                    <TextBlock Text="0.00" FontWeight="Light" Margin="210,32,17,91"></TextBlock>
-                    <Label Content="Grand Total" FontWeight="Medium" Margin="99,51,96,63" FontSize="14"></Label>
-                    <Label Content="----Thank You Visit Again----" FontStyle="Italic" FontWeight="Medium" Margin="53,81,69,33"></Label>
-                    <TextBlock x:Name="txtgrand" FontWeight="Medium" Margin="210,56,17,67"></TextBlock>
-                    <Label Content="______________________________________________________"  FontSize="8" Margin="9,96,6,24" FontWeight="Light"/>
-                    <Label Content="📧name@email.com"  FontSize="8" Margin="199,109,17,5" FontWeight="Light"/>
-                    <Label Content="📞99 9999-9999"  FontSize="8" Margin="117,109,113,5" FontWeight="Light"/>
-                    <Label Content="📍Silver Metropolis"  FontSize="8" Margin="20,109,193,5" FontWeight="Light"/>
-                    <Label Content="  Mumbai - 400063"  FontSize="8" Margin="20,120,193,5" FontWeight="Light"/>
+                    <TextBlock Text="0.00" FontWeight="Light" Margin="210,32,17,91"></TextBlock>-->
+                    <Label Content="Grand Total" FontWeight="Medium" Margin="71,10,113,93" FontSize="14" Height="43"></Label>
+                    <Label Content="----Thank You Visit Again----" FontStyle="Italic" FontWeight="Medium" Margin="53,47,69,57" Height="35"></Label>
+                    <TextBlock x:Name="txtgrand" FontWeight="Medium" Margin="172,12,31,111" Height="35" Width="100" FontSize="16"></TextBlock>
+                    <Label Content="____________________________________________________________________________________________________________________________________________________________"  FontSize="8" Margin="9,78,6,42" FontWeight="Light"/>
+                    <Label Content="📧name@gmail.com"  FontSize="8" Margin="199,101,17,13" FontWeight="Light"/>
+                    <Label Content="📞99 9999-9999"  FontSize="8" Margin="117,101,113,11" FontWeight="Light"/>
+                    <Label Content="📍Silver Metropolis"  FontSize="8" Margin="20,101,193, 30" FontWeight="Light"/>
+                    <Label Content="  Mumbai - 400063"  FontSize="8" Margin="20,117,193,11" FontWeight="Light"/>
 
                 </Grid>
             </Grid>
 
         </Grid>
+        
+    </Grid>
+    <Frame x:Name="Main"></Frame>
     </Grid>
 </UserControl>

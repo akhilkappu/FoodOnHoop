@@ -37,14 +37,5 @@ namespace BusinessLayer
             SignUpData signUpData=new SignUpData();
             signUpData.SaveLoginData(login);
         }
-        //public void SaveB(FoodOnHoopModel ifoodOn)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void SaveL(Category category)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

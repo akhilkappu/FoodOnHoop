@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FoodOnHoop.Views"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Background>
@@ -52,7 +53,11 @@
         <!--<Label Content="Confirm Password" Grid.Row="8" Grid.Column="2" FontSize="9" Height="20" Width="120"></Label>-->
         <!--<TextBox x:Name="txtID" Text="{Binding EmployeeID}" Grid.Row="1" Grid.Column="1" Height="20" Width="120"></TextBox>-->
         <TextBox x:Name="txtFullName" Text="{Binding EmployeeFullName}" Grid.Row="2" Grid.Column="1" Height="20" Width="120"></TextBox>
-        <DatePicker x:Name="dpDob" SelectedDate="{Binding Dob}" Grid.Row="3" Grid.Column="1" Height="20" Width="120"></DatePicker>
+        <DatePicker x:Name="dpDob" DisplayDateStart="12/12/1970" DisplayDateEnd="{Binding Dob}" SelectedDate="{Binding Dob}" Grid.Row="3" Grid.Column="1" Height="20" Width="120">
+            <!--<DatePicker.BlackoutDates>
+                <CalendarDateRange Start="12/12/1966" End="1/1/2022"/>
+            </DatePicker.BlackoutDates>-->
+        </DatePicker>
         <TextBox x:Name="txtAge" Text="{Binding Age}" Grid.Row="4" Grid.Column="1" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtAdhaarNumber" Text="{Binding AdhaarNumber}" Grid.Row="5" Grid.Column="1" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtFatherNamer" Text="{Binding FatherName}" Grid.Row="6" Grid.Column="1" Height="20" Width="120"></TextBox>
@@ -63,12 +68,13 @@
         <TextBox x:Name="txtState" Text="{Binding State}" Grid.Row="1" Grid.Column="3" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtContactNumber" Text="{Binding ContactNumber}" Grid.Row="2" Grid.Column="3" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtEmailId" Text="{Binding EmailID}" Grid.Row="3" Grid.Column="3" Height="20" Width="120"></TextBox>
-        <DatePicker x:Name="dpJoinDate" SelectedDate="{Binding JoinDate}" Grid.Row="4" Grid.Column="3" Height="20" Width="120"></DatePicker>
+        <DatePicker x:Name="dpJoinDate" DisplayDateEnd="{x:Static sys:DateTime.Today}" SelectedDate="{Binding JoinDate}" Grid.Row="4" Grid.Column="3" Height="20" Width="120"></DatePicker>
         <TextBox x:Name="txtOsp" Text="{Binding OtherSubmittedProof}" Grid.Row="5" Grid.Column="3" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtUserName" Text="{Binding UserName}" Grid.Row="6" Grid.Column="3" Height="20" Width="120"></TextBox>
         <TextBox x:Name="txtPassword" Text="{Binding Password}" Grid.Row="7" Grid.Column="3" Height="20" Width="120"></TextBox>
         <!--<PasswordBox x:Name="txtPassword"  Grid.Row="7" Grid.Column="3" Height="20" Width="120"></PasswordBox>
         <PasswordBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="3" Height="20" Width="120"></PasswordBox>-->
         <Button x:Name="btnSumbit" Background="LightBlue" Foreground="White" Content="Submit" Command="{Binding submitCommand}" FontSize="16" FontWeight="DemiBold" Grid.Row="9" Grid.Column="3" Height="30" Width="80" Margin="60,0,60,0" VerticalAlignment="Center" Click="btnSumbit_Click" />
+        <Frame x:Name="Main" ></Frame>
     </Grid>
 </UserControl>

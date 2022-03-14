@@ -36,11 +36,6 @@ namespace DataAccessLayer
                 foodOnHoopModel.UserName = item.UserName;
                 foodOnHoopModel.Password = item.Password;
 
-                //model. = item.ProductID;
-                //model.ProductName = item.ProductName;
-                //model.ProductDescription = item.Description;
-                //model.ProductPrice = (float)item.Price;
-                //model.ProductUnit = item.Unit;
                 dataList.Add(foodOnHoopModel);
             }
             return dataList;
@@ -61,15 +56,6 @@ namespace DataAccessLayer
                 }
                 objEntities.SaveChanges();
 
-                //ProductDBEntities productDBEntities = new ProductDBEntities();
-                //var result = from product in productDBEntities.Products
-                //             where product.ProductID == model.ProductId
-                //             select product;
-                //foreach (var item in result)
-                //{
-                //    productDBEntities.Products.Remove(item);
-                //}
-                //productDBEntities.SaveChanges();
             }
             catch (Exception ex)
             {
